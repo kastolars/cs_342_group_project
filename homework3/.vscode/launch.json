@@ -1,0 +1,16 @@
+{
+    "configurations": [
+
+        {
+            "type": "java",
+            "name": "Homework 3",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "stopOnEntry": false,
+            "mainClass": "GameTester",
+            "args": "MysticCity_40_untested.gdf",
+            "projectName": "Homework 3"
+        }
+    ]
+}

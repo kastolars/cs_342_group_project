@@ -58,12 +58,21 @@ placeOrCharID 		 // Place where this artifact should be put initially.
 			 // > 0 to put the artifact in a specified Place
 ID   value   mobility   keyPattern   name
 			 // ID is a unique integer, > 0, in the range of 32-bit signed ints
+			 	// ID >= 100 -- Weapons
+			 	// ID >= 200 -- Potions
+			 	// ID >= 300 -- Magical Items
+			 	// ID >= 400 -- Craftable Items
+			 	// ID >= 500 -- Scrolls
+			 	// ID >= 600 -- Maps
+			 	// ID >= 700 -- Keys
+			 	// ID otherwise is a regular artifact or gem
 			 // value can be used for scoring points, or eventually for bartering & trade ( integer )
 			 // mobility is < 0 for immovable objects, = 0 for movable objects ( integer )
 			 // keyPattern is a 32-bit int, = 0. This key operates any item with a matching lockPattern
 			 // keyPattern = 0 opens no locks
 			 // name allows user to refer to this object, and may contain spaces but not tabs
 			 // Additional fields may be added in later versions of the GDF, as you wish.
+artfData		 // additional information for the artifact (damage, quantity, etc)
 ndescr 			 // Number of description lines to follow
 description 		 // ndescr lines of text describing the Artifact
 

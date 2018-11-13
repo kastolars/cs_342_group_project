@@ -11,8 +11,9 @@ public class Keys extends Artifact {
 
     private int keyPattern;
     private int destID;
+    private int metaData;
     
-    public Keys (int ID, int value, int size, String name, String desc, int keyPattern, int destID) {
+    public Keys (int ID, int value, int size, String name, String desc, int keyPattern, int destID, int meta) {
 
         /*this.ID = ID;
         this.value = value;
@@ -20,13 +21,14 @@ public class Keys extends Artifact {
         this.name = name;
         this.desc = desc;*/
 
-        super(ID, value, size, name, desc);
+        super(ID, value, size, name, desc, keyPattern, destID);
 
         this.keyPattern = keyPattern;
         this.destID = destID;
+        this.metaData = meta;
 
 
-        Random rand = new Random();
+        /*Random rand = new Random();
 
         //character
 		if((destID < 0)) {
@@ -41,7 +43,7 @@ public class Keys extends Artifact {
 			int random = rand.nextInt(Place.place.size() - 2) + 1;
 			Place Dest = Place.place.get(random);
 			Dest.addArtifact(this);
-        }
+        }*/
         
     }
 

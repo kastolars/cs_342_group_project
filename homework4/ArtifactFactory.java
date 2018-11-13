@@ -22,6 +22,7 @@ public class ArtifactFactory {
     private int destID;
 
     private int typeID;
+    private int info;
 
     public ArtifactFactory(Scanner artf_scn, double verNum) {
 
@@ -64,7 +65,7 @@ public class ArtifactFactory {
             this.name = this.name.trim();
 
             next = CleanLineScanner.getCleanLine(artf_scn);
-            int info = Integer.parseInt(next);
+            this.info = Integer.parseInt(next);
             
 
 			this.desc = CleanLineScanner.getDescription(artf_scn);		//calls the function in Place that parses the
@@ -73,24 +74,6 @@ public class ArtifactFactory {
 
             Artifact artf = TypeArtifact(typeID);
 
-            if(typeID == 0 || typeID > 7){
-                Random rand = new Random();
-                //character
-                if((destID < 0)) {
-                    Character User = Character.getCharacterByID(destID);
-                    User.addUsrArtf(artf);
-                } else if(destID > 0) {
-                //place
-                    Place Dest = Place.getPlaceByID(destID);
-                    Dest.addArtifact(artf);
-                } else {
-                    //random place
-                    int random = rand.nextInt(Place.place.size() - 2) + 2;
-                    Place Dest = Place.place.get(random);
-                    Dest.addArtifact(artf);
-                }
-               // artf.SetDestination(destID);
-            }		
         }
     }
 
@@ -100,132 +83,21 @@ public class ArtifactFactory {
         switch(typeID) {
     
         case 1:
-            return new Weapons(ID, value, size, name, desc, keyPattern, destID);
+            return new Weapons(ID, value, size, name, desc, keyPattern, destID, info);
         case 2:
-            return new Potions(ID, value, size, name, desc, keyPattern, destID);
+            return new Potions(ID, value, size, name, desc, keyPattern, destID, info);
         case 3:
-            return new Magic(ID, value, size, name, desc, keyPattern, destID);
+            return new Magic(ID, value, size, name, desc, keyPattern, destID, info);
         case 4:
-            return new Craftable(ID, value, size, name, desc, keyPattern, destID);
+            return new Craftable(ID, value, size, name, desc, keyPattern, destID, info);
         case 5:
-            return new Scrolls(ID, value, size, name, desc, keyPattern, destID);
+            return new Scrolls(ID, value, size, name, desc, keyPattern, destID, info);
         case 6:
-            return new Maps(ID, value, size, name, desc, keyPattern, destID);
+            return new Maps(ID, value, size, name, desc, keyPattern, destID, info);
         case 7:
-            return new Keys(ID, value, size, name, desc, keyPattern, destID);
+            return new Keys(ID, value, size, name, desc, keyPattern, destID, info);
         default:
-            return new Artifact(ID, value, size, name, desc);
+            return new Artifact(ID, value, size, name, desc, keyPattern, destID);
         }
     }
 }
-
-
-/*public class TypeArtifact {
-
-    public static Artifact TypeOf(Scanner artf_scn, double verNum) {
-
-        String next = CleanLineScanner.getCleanLine(artf_scn);
-
-        if(next.equals("\0") || next.equals(null)) {
-            //return
-        } else {
-            int typeId = Integer.parseInt(next);
-
-            if(typeId == 1) {
-                return Weapons();
-            } else if (typeId == 2) {
-                return Potions();
-            } else if (typeId == 3) {
-                return Magic();
-            } else if (typeId == 4) {
-                return Craftable();
-            } else if (typeId == 5) {
-                return Gems();
-            } else if (typeId == 6) {
-                return Scrolls();
-            } else if (typeId == 7) {
-                return Keys();
-            } else if (typeId == 8){
-                return Map();
-            } else { return Artifact(); }
-
-        }
-
-    }
-}*/
-
-
-//for fighting -- swords, knifes etc
-/*class Weapons extends Artifact {
-
-    public Weapons(Scanner artf_scn, double verNum) {
-
-        super(artf_scn, verNum);
-
-    }
-
-}
-
-//
-class Potions extends Artifact {
-    
-    public Potions(Scanner artf_scn, double verNum) {
-
-        super(artf_scn, verNum);
-
-    }
-}
-
-class Magic extends Artifact {
-    
-    public Magic(Scanner artf_scn, double verNum) {
-
-        super(artf_scn, verNum);
-
-    }
-}
-
-class Craftable extends Artifact {
-
-    public Craftable(Scanner artf_scn, double verNum) {
-
-        super(artf_scn, verNum);
-
-    }
-}
-
-class Gems extends Artifact {
-
-    public Gems(Scanner artf_scn, double verNum) {
-
-        super(artf_scn, verNum);
-
-    }
-}
-
-class Scrolls extends Artifact {
-
-    public Scrolls(Scanner artf_scn, double verNum) {
-
-        super(artf_scn, verNum);
-
-    }
-}
-
-class Maps extends Artifact {
-
-    public Maps(Scanner artf_scn, double verNum) {
-
-        super(artf_scn, verNum);
-
-    }
-}
-
-class Keys extends Artifact {
-
-    public Keys(Scanner artf_scn, double verNum) {
-
-        super(artf_scn, verNum);
-
-    }
-}*/

@@ -11,8 +11,9 @@ public class Magic extends Artifact {
 
     private int keyPattern;
     private int destID;
+    private int metaData;
     
-    public Magic (int ID, int value, int size, String name, String desc, int keyPattern, int destID) {
+    public Magic (int ID, int value, int size, String name, String desc, int keyPattern, int destID, int meta) {
 
         /*this.ID = ID;
         this.value = value;
@@ -20,13 +21,14 @@ public class Magic extends Artifact {
         this.name = name;
         this.desc = desc;*/
 
-        super(ID, value, size, name, desc);
+        super(ID, value, size, name, desc, keyPattern, destID);
 
         this.keyPattern = keyPattern;
         this.destID = destID;
+        this.metaData = meta;
 
 
-        Random rand = new Random();
+        /*Random rand = new Random();
 
         //character
 		if((destID < 0)) {
@@ -41,10 +43,16 @@ public class Magic extends Artifact {
 			int random = rand.nextInt(Place.place.size() - 2) + 1;
 			Place Dest = Place.place.get(random);
 			Dest.addArtifact(this);
-        }
+        }*/
         
     }
 
+
+    @Override
+    public void use(Character c) {
+        //performs magic using potions and wand
+        // spells can only be used with wand...
+    }
 
 
 

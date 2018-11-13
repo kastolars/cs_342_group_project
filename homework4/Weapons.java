@@ -11,8 +11,9 @@ public class Weapons extends Artifact {
 
     private int keyPattern;
     private int destID;
+    private int metaData;
     
-    public Weapons (int ID, int value, int size, String name, String desc, int keyPattern, int destID) {
+    public Weapons (int ID, int value, int size, String name, String desc, int keyPattern, int destID, int meta) {
 
         /*this.ID = ID;
         this.value = value;
@@ -20,13 +21,13 @@ public class Weapons extends Artifact {
         this.name = name;
         this.desc = desc;*/
 
-        super(ID, value, size, name, desc);
+        super(ID, value, size, name, desc, keyPattern, destID);
 
         this.keyPattern = keyPattern;
         this.destID = destID;
+        this.metaData = meta;
 
-
-        Random rand = new Random();
+        /*Random rand = new Random();
 
         int random = rand.nextInt(Place.place.size()) + 2;
 
@@ -45,14 +46,14 @@ public class Weapons extends Artifact {
 			//int random = rand.nextInt(Place.place.size() - 2) + 1;
 			Place Dest = Place.place.get(random);
 			Dest.addArtifact(this);
-        }*/
+        }
 
         if(destID == 0) {
             this.destID = random;
             this.SetDestination(this.destID);
         } else {
             this.SetDestination(this.destID);
-        }
+        }*/
 
     }
 
@@ -60,7 +61,7 @@ public class Weapons extends Artifact {
     @Override
     public void use(Character c) {
 
-        System.out.println("Using Weapon...\n");
+        System.out.println("\nUsing Weapon...\n");
 
     }
 

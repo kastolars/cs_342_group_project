@@ -27,10 +27,10 @@ public class Artifact {
 	public static int numAdded;
 	
 	private int ID;
-	//private int destID;
+	private int destID;
 	private int keyPattern = 0;
 
-	public Artifact(int ID, int value, int size, String name, String desc) {
+	public Artifact(int ID, int value, int size, String name, String desc, int keyPattern, int destID) {
 
 
 		this.ID = ID;
@@ -38,6 +38,8 @@ public class Artifact {
         this.size = size;
         this.name = name;
 		this.description = desc;
+		this.keyPattern = keyPattern;
+		this.destID = destID;
 		
 		//this.destID = destID;
 		
@@ -99,12 +101,35 @@ public class Artifact {
 			numAdded++;						//increment the counter to add indicated artifact was created
 */
 
+		Random rand = new Random();
+
+		//character
+		if((destID < 0)) {
+			Character User = Character.getCharacterByID(destID);
+			User.addUsrArtf(this);
+		} else if(destID > 0) {
+			//place
+			Place Dest = Place.getPlaceByID(destID);
+			Dest.addArtifact(this);
+		} else {
+			//random place
+			int random = rand.nextInt(Place.place.size() - 2) + 2;
+			Place Dest = Place.place.get(random);
+			Dest.addArtifact(this);
+		}
+
 		numAdded++;
 		//placeID.addArtifact(this);		//adds to the artifact collection of the the placeID Place
 		artf.add(this);
 
 
 
+	}
+
+
+	//getter for arraylist size
+	public int GetSize() {
+		return artf.size();
 	}
 
 	public void SetDestination(int destID) {

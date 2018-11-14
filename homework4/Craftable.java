@@ -1,5 +1,7 @@
 
 import java.util.Random;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Craftable extends Artifact {
 
@@ -12,6 +14,8 @@ public class Craftable extends Artifact {
     private int keyPattern;
     private int destID;
     private int metaData;
+
+    private static ArrayList<Artifact> crafted = new ArrayList<Artifact>();
     
     public Craftable (int ID, int value, int size, String name, String desc, int keyPattern, int destID, int meta) {
 
@@ -46,6 +50,44 @@ public class Craftable extends Artifact {
         }*/
         
     }
+
+    public Craftable(int id, int value, int meta, String name, String desc) {
+        super(id, value, meta, name, desc);
+
+        crafted.add(this);
+    }
+
+    /*public static int Recipe(Scanner recp_scn) {
+
+        String next = CleanLineScanner.getCleanLine(recp_scn);
+
+        if(next.equals("\0") || next.equals(null)) {
+
+        } else {
+
+            String name = next;
+            next = CleanLineScanner.getCleanLine(recp_scn);
+
+            String data[] = next.split(" ", -1);
+            int id = Integer.parseInt(data[0]);
+            int quantity = Integer.parseInt(data[1]);
+            int info = Integer.parseInt(data[2]);
+
+            next = CleanLineScanner.getCleanLine(recp_scn);
+            String artfID[] = next.split("(?=//d)", -1);
+
+            for(int i = 0; i < artfID.length; i++) {
+                System.out.println(artfID[i]);
+            }
+
+            String description = CleanLineScanner.getDescription(recp_scn);
+
+            System.out.println();
+
+        }
+
+        return crafted.size();
+    }*/
 
 
     @Override

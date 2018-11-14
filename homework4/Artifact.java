@@ -126,12 +126,21 @@ public class Artifact {
 
 	}
 
+	public Artifact (int id, int value, int meta, String name, String description) {
+		this.ID = id;
+		this.value = value % 10;
+		this.name = name;
+		this.description = description;
+		this.keyPattern = 0;
+	}
+
 
 	//getter for arraylist size
-	public int GetSize() {
+	public static int GetSize() {
 		return artf.size();
 	}
 
+	/* DON'T NEED IT REMOVE ON CLEAN UP + CLEAN UP WEAPON CLASS
 	public void SetDestination(int destID) {
 
 		//Random rand = new Random();
@@ -145,7 +154,7 @@ public class Artifact {
 			Dest.addArtifact(this);
 		}
 
-	}
+	}*/
 	
 	public int ID() {
 		//returns the ID of the artifact

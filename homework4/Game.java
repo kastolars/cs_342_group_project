@@ -25,6 +25,7 @@ public class Game {
 	private int numDir;				//   to be read from the GDF file
 	private int numArtf;
 	private int numChar;
+	private int numRecp;
 	private double verNum;				//version number for the GDF file
 	//private ArrayList<Artifact> usr_artf = new ArrayList<Artifact>();	
 												//stores all the places in game
@@ -75,6 +76,9 @@ public class Game {
 			} else if(next.startsWith("CHARACTERS") && verNum >= 4){
 				type = 4;
 				numChar = Integer.parseInt(next.substring(11));
+			} else if(next.startsWith("RECIPES") && verNum >= 5) {
+				type = 5;
+				numRecp = Integer.parseInt(next.substring(8));
 			}
 			
 			
@@ -97,17 +101,12 @@ public class Game {
 				break;
 			case 3:
 				next = game_scn.nextLine();
-				while(game_scn.hasNextLine() && Artifact.numAdded < numArtf) {
+				int artf = 0;
+				while(game_scn.hasNextLine() && artf < numArtf) {
 					//Artifact a_add = new Artifact(game_scn, verNum);
-					//Artifact w = new Weapons(game_scn, verNum);
 					ArtifactFactory a_add = new ArtifactFactory(game_scn, verNum);
+					artf = Artifact.GetSize();
 
-					/*try {
-						Artifact a_add = TypeArtifact.TypeOf(game_scn, verNum);
-					} catch (NullPointerException npe) {
-						//re-loop
-					}*/
-					
 				}
 				type = 0;
 				break;
@@ -131,6 +130,17 @@ public class Game {
 					}
 					
 					//Character c_add = new Character(game_scn, verNum);
+				}
+				type = 0;
+				break;
+			case 5:
+				next = game_scn.nextLine();
+				int recp = 0;
+				while(game_scn.hasNextLine() && recp < numRecp) {
+					//String s = CleanLineScanner.getCleanLine(game_scn);
+					Recipe r = new Recipe(game_scn);
+					recp = r.GetSize();
+
 				}
 				type = 0;
 				break;

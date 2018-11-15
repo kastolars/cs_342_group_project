@@ -67,7 +67,7 @@ public abstract class Character {
         } catch(Exception e){ }
 
         if( placeID == 0 )
-            placeID = Place.randID();
+            placeID = Place.getRandomPlaceID();
         
         try{
             ID = Integer.parseInt( parser.next() ); // Place id (int)
@@ -142,12 +142,17 @@ public abstract class Character {
     }
 
     public void addArtifact( Artifact item ){
+        if( item == null ) return;
         System.out.printf("-+ Item [%s] Aquired +-\n", item.name() );
         items.add( item );
     }
 
     public void moveToPlace(int id){
         placeID = id;
+    }
+
+    public Place getCurrentPlace(){
+        return Place.getPlaceById( placeID );
     }
 
     // return a random valid Item
@@ -179,8 +184,9 @@ public abstract class Character {
             }
         return null;
     }
-    
+
     public void print(){ System.out.println( this ); }
+
     public void printItems(){ System.out.printf("ITEMS\n%s\n", items); }
     public void display(){ print(); }
     public void makeMove(){}
@@ -211,7 +217,7 @@ public abstract class Character {
         } catch(Exception e){ }
 
         if( placeID == 0 )
-            placeID = Place.randID();
+            placeID = Place.getRandomPlaceID();
         
         int ID;
         try{
@@ -254,13 +260,13 @@ public abstract class Character {
         // placeID, name, description
     }
 
-    abstract protected void lifeCheck();
+//    abstract protected void lifeCheck();
 
     public void takeDamage(int h){
         health -= h;
 
         if( health < 0 ){
-            lifeCheck();
+            // lifeCheck();
         }
 
         if( lives < 0 ){
@@ -276,7 +282,7 @@ public abstract class Character {
             System.out.println("-- No players remain" + 
                         ", tata for now :) --");
 
-            Game.quit();
+            GameTester.quit();
         }
     }
 
@@ -284,5 +290,24 @@ public abstract class Character {
         mana -= 10;
     }
 
-    abstract public void cast(String spell, Place p);
+    //checks if the character has an artifact of id
+    public int HasArtifact(int id) {
+        for(int i = 0; i < items.size(); i++) {
+            if(items.get(i).ID() == id) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    //returns the artifact at index in the list of artifacts the character has
+    public Artifact charArtifact(int index) {
+        return items.get(index);
+    }
+
+    public int ID(){ return ID; }
+
+//    abstract public void cast(String spell, Place p);
+
 }

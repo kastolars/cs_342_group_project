@@ -14,7 +14,7 @@ public class GrandPubah extends NPC{
         mana = 100;
         lives = 5;
     }
-
+/*
     protected void lifeCheck(){
         lives--;
         health = 1000;
@@ -27,4 +27,5 @@ public class GrandPubah extends NPC{
             
         }
     }
+*/
 }

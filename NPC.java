@@ -1,4 +1,8 @@
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 /**
  * AUTHOR: lpaltz2 -- hw3
@@ -14,44 +18,59 @@ import java.util.Scanner;
  *  getByID() : Character -- static collection of characters
  *  Character(ID, name, desc) : Character -- make a character directly
  *  Character(Scanner) : Character -- have a character make themself from GDF
- *  
+ * 
  *  getMove() : Move -- create a new move and return that
  *  makeMove() : void -- call get move and then executes it
  */
 
-public class Player extends Character implements DecisionMaker{
-    public Player(Scanner s){
+public class NPC extends Character implements DecisionMaker{
+    public NPC(Scanner s){
         super(s);
+        health = 100;
+        mana = 0;
+        lives = 1;
     }
 
-    public Player(int i, String s, String d){
+    public NPC(int i, String s, String d){
         super(i, s, d);
         health = 100;
-        mana = 100;
-        lives = 3;
+        mana = 0;
+        lives = 1;
     }
 /*
     public Move getMove(Character actor, Place room){
-        return new Move(actor, room);
+        return new Move( actor, room );
     }
-
     public void makeMove(){
-        System.out.print(color);
+        PrintStream tmp = System.out;
+
+        System.setOut( new PrintStream(
+            new OutputStream(){
+                @Override
+                public void write(int b) throws IOException {
+
+                }
+            } )
+        );
+
+        System.out.print(CColor.RED);
 
         getMove( this, Place.getPlaceByID(placeID) )
-            .execute();
+            .execute(); 
 
         System.out.print(CColor.RESET);
+
+        System.setOut( tmp );
+    }
+
+    public void cast(String spell, Place p){
+        System.out.println("  ... nothing happened ... ");
     }
 
     protected void lifeCheck(){
         lives--;
         health = 100;
-        mana = 100;
-    }
-
-    public void cast(String spell, Place p){
-        System.out.println("  ... nothing happened ... ");
+        mana = 0;
     }
 */
 }

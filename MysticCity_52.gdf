@@ -1,4 +1,4 @@
-GDF 5.0 Mystic City - Populated! // Magic word, version number, and Environment name.
+GDF 5.2 Mystic City - Populated! // Magic word, version number, and Environment name.
 
 PLACES 14	// Fourteen Places in this file
 // In this test file, the first 6 room numbers are chosen in an X-Y fashion
@@ -44,7 +44,7 @@ There is a door to the east, and a stairway leading up.
 //You need to travel through and back in order to get to the stage 2 of the game,
 //This is why these rooms are in the shape of the number 2
 
-101	Room 101		//C1
+-101	Room 101		//C1
 2
 This is room 101 of the catacombs
 There are doors to the west and northeast
@@ -103,11 +103,11 @@ DIRECTIONS 35	//Thirty five directions defined ( No number 15 )
 9	22	W	12	0	// PE to EH
 
 
-10	12	D	-11	1001	// EH to PS, locked
+-10	12	D	-11	1001	// EH to PS, locked
 11	11	U	-12	1001	// PS to EH, locked
 12	22	D	21	0	// PE to PL
 
-13	21	W	-11	1001	// PL to PS, locked
+13	21	W	-11	-1001	// PL to PS, locked
 14	11	E	21	0	// PS to PL
 // REMOVED:  15	21	E	0	0	// PL to nowhere, locked
 

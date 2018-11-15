@@ -149,7 +149,7 @@ public class GameTester {
         Scanner scanner = KeyboardScanner.getKeyboardScanner();
 
         if (input.equalsIgnoreCase("default"))
-            input = "mysticCity40.gdf";
+            input = "MysticCity_52.gdf";
 
         // ask for input until a valid GDF is given
         while ( !GAME.getFile( input ) ){
@@ -157,7 +157,7 @@ public class GameTester {
             input = scanner.nextLine();
 
             if (input.equalsIgnoreCase("default")){
-                input = "mysticCity40.gdf";
+                input = "MysticCity_52.gdf";
                 break;
             }
         }

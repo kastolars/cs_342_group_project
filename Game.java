@@ -40,6 +40,7 @@ public class Game {
         Character.knownCharacters().add( 
                 new NPC( 0, "NOONE", "*A deathly skeleton\n" )
             );
+
     }
 
     //Construct the game by stepping through the tokens and assigning them
@@ -57,7 +58,7 @@ public class Game {
         }
         catch(Exception e){
             System.out.printf("--ERROR-- GDF <version> malformed\n");
-            quit();
+            GameTester.quit();
             System.exit(1);
         }
         name = parser.nextLine().trim(); 
@@ -72,12 +73,12 @@ public class Game {
             fiveTwo( parser, charNum ); // version 5.2 parser
         else{
             System.out.printf("--ERROR-- GDF Version not supported\n");
-            quit();
+            GameTester.quit();
             System.exit(1);
         }
     }
 
-    private void threeOne( Scanner parser, int charNum ){
+    private void threeOne( Scanner parser, int charNum ){}/*
         int count; // counter for # of entries under each section
 
         // if charNum < 0 use max(1, default token)
@@ -106,15 +107,15 @@ public class Game {
         } catch (Exception e){
             System.out.printf("--ERROR-- Malformed number of { Atrifacts" +
                          " || Directions || Places }\n");
-            quit();
+            GameTester.quit();
             System.exit(1);
         }
         // System.out.println( "GAME::" + Place.getPlaceByID(23) );
         // Place.knownPlaces().forEach( x -> System.out.println(x+"\n"));
     }
+*/
 
-
-    private void fourZero( Scanner parser, int charNum ){
+    private void fourZero( Scanner parser, int charNum ){}/*
         int count; // counter for # of entries under each section
 
         // if charNum < 0 use max(1, default token)
@@ -176,13 +177,13 @@ public class Game {
             // e.printStackTrace();
             System.out.printf("--ERROR-- Malformed number of { Atrifacts" +
                          " || Directions || Places }\n");
-            quit();
+            GameTester.quit();
             System.exit(1);
         }
         // System.out.println( "GAME::" + Place.getPlaceByID(23) );
         // Place.knownPlaces().forEach( x -> System.out.println(x+"\n"));
     }
-
+*/
     private void fiveTwo( Scanner parser, int charNum ){
         int count;
 
@@ -193,7 +194,11 @@ public class Game {
 
             parser.next(); // Direction token
             count = Integer.parseInt( parser.next() ); // Direction count (int)
-            DirectionFactory.makePlaces( parser, count );
+            DirectionFactory.makeDirections( parser, count );
+
+            parser.next(); // Character token
+            count = Integer.parseInt( parser.next() ); // Character (int)
+            int players = 0;
 
             if(count < charNum){
                 for(int i = 0; i <= charNum - count; i++)
@@ -226,21 +231,33 @@ public class Game {
                 Character.getCharacterByID(1).moveToPlace(12);
             }
 
+            // Character.knownCharacters().forEach(x -> x.print() );
+
             // walk until you find the appropriate token
             while ( !parser.next().equals("ARTIFACTS") ) ; // Get Artifact token
 
             count = Integer.parseInt( parser.next() ); // Artifact (int)
-            for(int i = 0; i < count; i++)
+            int i = 0;
+            while( parser.hasNextLine() && i < count ) {
+                // Artifact a_add = new Artifact(game_scn, verNum);
+                // System.out.println( i );
                 new ArtifactFactory( parser );
+                i = Artifact.GetSize();
+            }
 
             while ( !parser.next().equals("RECIPES") ) ; // Get Recipe token
 
             count = Integer.parseInt( parser.next() ); // Recipe (int)
-            for(int i = 0; i < count; i++)
-                new Recipe( parser );
+            i = 0;
+            while( parser.hasNextLine() && i < count ) {
+                //String s = CleanLineScanner.getCleanLine(game_scn);
+                Recipe r = new Recipe( parser );
+                i = r.GetSize();
+            }
+
         }
         catch (Exception e){
-            // e.printStackTrace();
+            e.printStackTrace();
             System.out.printf("--ERROR-- Malformed number of { Atrifacts" +
                         " || Directions || Places }\n");
             GameTester.quit();
@@ -250,6 +267,7 @@ public class Game {
     }
 
     public void play(){
+/*
         System.out.println("  WELCOME TO " + name + "\n");
 
         try{
@@ -268,14 +286,10 @@ public class Game {
         finally{
             GameTester.quit();
         }
+*/
     }
 
     public void print(){
         System.out.println(this);
-    }
-
-    public String toString(){
-        return name + ": \n" +
-            Place.knownPlaces();
     }
 }

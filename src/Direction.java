@@ -1,12 +1,12 @@
 import static java.lang.Math.abs;
 
 public class Direction {
-    private int id;
-    private DirType dir;
-    private Place source;
-    private Place destination;
-    private boolean locked;
-    private int lockPattern;
+    protected int id;
+    protected DirType dir;
+    protected Place source;
+    protected Place destination;
+    protected boolean locked;
+    protected int lockPattern;
 
     public Direction(int id, int sourceId, String type, int destId, int lockPattern) {
         this.id = abs(id);
@@ -15,6 +15,7 @@ public class Direction {
         this.destination = Place.getPlaceById(abs(destId));
         this.locked = destId < 0;
         this.lockPattern = abs(lockPattern);
+        source.addDirection(this);
     }
 
     public boolean match(String s) {
@@ -29,7 +30,11 @@ public class Direction {
         }
     }
 
-    private enum DirType {
+    public void useKey(Artifact a, Character c) {
+
+    }
+
+    protected enum DirType {
         NONE("None", "None"),
         N("North", "N"),
         S("South", "S"),
@@ -50,15 +55,15 @@ public class Direction {
         SSE("South-Southeast", "SSE"),
         SSW("South-Southwest", "SSW");
 
-        private final String text;
-        private final String abbreviation;
+        protected final String text;
+        protected final String abbreviation;
 
         DirType(String text, String abbreviation) {
             this.text = text;
             this.abbreviation = abbreviation;
         }
 
-        private boolean match(String s){
+        protected boolean match(String s){
             return s.matches("(?i)" + text + "|" + abbreviation);
         }
     }

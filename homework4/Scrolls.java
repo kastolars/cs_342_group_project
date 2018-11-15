@@ -53,10 +53,10 @@ public class Scrolls extends Artifact {
 
         if(this.name().contains("Recipe")) {
             //print out all the recipes
-            //ask the user to selet a "recipe" and call make??
+            //ask the user to selet a "recipe" and call make?
 
-
-
+            Recipe.display();
+            
         } else if(this.name().contains("scroll")) {
             //print out what the scroll says
 

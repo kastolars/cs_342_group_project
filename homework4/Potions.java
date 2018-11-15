@@ -47,6 +47,15 @@ public class Potions extends Magic {
         
     }
 
+    @Override
+    public int getMeta() {
+        return this.metaData;
+    }
+
+    @Override
+    public void updateMeta(int meta) {
+        this.metaData = meta;
+    }
 
     @Override
     public void use(Character c) {

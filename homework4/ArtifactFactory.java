@@ -39,13 +39,14 @@ public class ArtifactFactory {
 		if(next.equals("\0") || next.equals(null)) {
 			//return
 		} else {
-			
+
+            next = next.trim();
 			destID = Integer.parseInt(next);
 			
-			next = CleanLineScanner.getCleanLine(artf_scn);			//gets the clean line
+			next = CleanLineScanner.getLine(artf_scn);			//gets the clean line
 			String data[] = next.split(" ", -1);		//splits the line based on spaces
 			
-            this.ID = (Integer.parseInt(data[0]) % 100);	//ID
+            this.ID = (Integer.parseInt(data[0])) % 100;	        //ID
             this.typeID = Integer.parseInt(data[0]) / 100;  //typeID
 			this.value = Integer.parseInt(data[1]);			//value
 			this.size = Integer.parseInt(data[2]);			//size
@@ -64,7 +65,7 @@ public class ArtifactFactory {
 			
             this.name = this.name.trim();
 
-            next = CleanLineScanner.getCleanLine(artf_scn);
+            next = CleanLineScanner.getLine(artf_scn);
             this.info = Integer.parseInt(next);
             
 

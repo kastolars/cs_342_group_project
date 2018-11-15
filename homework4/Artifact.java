@@ -140,6 +140,14 @@ public class Artifact {
 		return artf.size();
 	}
 
+	public int getMeta() {
+		return 0;
+	}
+
+	public void updateMeta(int meta) {
+		return;
+	}
+
 	/* DON'T NEED IT REMOVE ON CLEAN UP + CLEAN UP WEAPON CLASS
 	public void SetDestination(int destID) {
 
@@ -195,6 +203,10 @@ public class Artifact {
 		if(this.name().contains("key")) {
 			System.out.println("\nWrong Use Method\n");
 		}
+
+		if(this.name().contains("Torch")) {
+
+		}
 		
 		/*if(this.name().contains("key")){
 			Place curr = Character.getCurrentPlace(c);
@@ -203,6 +215,17 @@ public class Artifact {
 			System.out.println("\nThe artifact you are trying to use is not a Key\n");
 		}*/
 
+	}
+
+	public static String idToName(int id) {
+		
+		for(int i = 0; i < artf.size(); i++) {
+			if(artf.get(i).ID == id) {
+				return artf.get(i).name();
+			}
+		}
+
+		return null;
 	}
 
 	public static void display() {

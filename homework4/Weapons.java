@@ -28,10 +28,6 @@ public class Weapons extends Artifact {
         this.metaData = meta;
 
         /*Random rand = new Random();
-
-        int random = rand.nextInt(Place.place.size()) + 2;
-
-        //random = (int)(Math.random() * (Place.place.size() - 2)) + 2;
         
         //character
 		/*if((destID < 0)) {
@@ -46,23 +42,27 @@ public class Weapons extends Artifact {
 			//int random = rand.nextInt(Place.place.size() - 2) + 1;
 			Place Dest = Place.place.get(random);
 			Dest.addArtifact(this);
-        }
-
-        if(destID == 0) {
-            this.destID = random;
-            this.SetDestination(this.destID);
-        } else {
-            this.SetDestination(this.destID);
         }*/
 
     }
 
 
     @Override
+    //lowers the damage of all the characters in the room expect for current
+    //if this is an armour increases the health of the character
     public void use(Character c) {
 
-        System.out.println("\nUsing Weapon...\n");
+        if(name().contains("Armour")) {
+            // increase the health and removes the artifact from
+            // character inventory
 
+
+        } else {
+
+            System.out.println("\nUsing Weapon...\n");
+            //c.takeDamage(metaData);
+            
+        }
     }
 
 

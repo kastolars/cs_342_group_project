@@ -16,14 +16,14 @@ public class Recipe {
 
     public Recipe(Scanner recp_scn) {
         
-        String next = CleanLineScanner.getCleanLine(recp_scn);
+        String next = CleanLineScanner.getLine(recp_scn);
 
         if(next.equals("\0") || next.equals(null)) {
 
         } else {
 
             this.name = next;
-            next = CleanLineScanner.getCleanLine(recp_scn);
+            next = CleanLineScanner.getLine(recp_scn);
 
             String data[] = next.split(" ", -1);
             this.ID = Integer.parseInt(data[0]);
@@ -31,11 +31,7 @@ public class Recipe {
             this.meta = Integer.parseInt(data[2]);
 
             next = CleanLineScanner.getCleanLine(recp_scn);
-            this.artfID = next.split("(?=//d)", -1);
-
-            for(int i = 0; i < artfID.length; i++) {
-                System.out.println(artfID[i]);
-            }
+            this.artfID = next.split(" ", -1);
 
             this.description = CleanLineScanner.getDescription(recp_scn);
             System.out.println();
@@ -62,17 +58,24 @@ public class Recipe {
         return recipes.size();
     }
     
-    /* PROBABLY DON'T NEED IT
-    public boolean HasRecipe(String name) {
+    //PROBABLY NEED IT
+    public static int HasRecipe(String name) {
 
         for(int i = 0; i < recipes.size(); i++) {
+            
             if(name.equalsIgnoreCase(recipes.get(i).name())) {
-                return true;
+                return i;
             }
+
         }
 
-        return false;
-    }*/
+        return -1;
+    }
+
+
+    public static Recipe getRecipe(int index) {
+        return recipes.get(index);
+    }
 
     //takes in a character that is trying to make the artifact
     //checks if they character has enough materials to make it
@@ -81,6 +84,7 @@ public class Recipe {
 
         int k = 0;
         int j = 0;
+
 
         //check if the character has ingrediants for crafting...
         //check if the meta of artifact matches meta of recipe
@@ -94,6 +98,16 @@ public class Recipe {
                 Artifact b = c.charArtifact(j);
 
                 //check meta and update... maybe a function
+                if((a.getMeta() >= this.quantity) && (b.getMeta() >= this.quantity)) {
+                    
+                    a.updateMeta(a.getMeta() - quantity);
+                    b.updateMeta(b.getMeta() - quantity);
+                    return this.Craft(c);
+
+                } else {
+                    System.out.println("\nYou have insufficient Resources to craft " + this.name);
+                    return null;
+                }
             }
 
         } else {
@@ -101,12 +115,56 @@ public class Recipe {
 
             if(k >= 0) {
                 Artifact a = c.charArtifact(k);
+
+                if(a.getMeta() >= this.quantity) {
+
+                    a.updateMeta(a.getMeta() - quantity);      //update quantity of left
+                    return this.Craft(c);
                 
-                //check meta and update... maybe a function
+                } else {
+                    System.out.println("\nYou have insufficient Resources to craft " + this.name);
+                    return null;
+                }
             }
         }
 
+        System.out.println("\nYou don't the required resources to craft this item. Try again");
         return null;
+    }
+
+
+    public Artifact Craft(Character c) {
+
+        Artifact n;
+        if(this.name.contains("Potions")) {
+            n = new Potions (ID, 0, 10, name, description, 0, (-1*c.ID()), meta);
+        } else if (this.name.contains("Armour")) {
+            n = new Weapons(ID, 0, 10, name, description, 0, (-1*c.ID()), meta);
+        } else {
+            n = null;
+        }
+
+        return n;
+
+    }
+
+    public static void display() {
+        for(int i = 0; i < recipes.size(); i++) {
+            Recipe r = recipes.get(i);
+            System.out.print("\n" + r.name + "\n-->Needs " + r.quantity + " of ");
+
+            for(int j = 0; j < r.artfID.length; j++) {
+                System.out.print(Artifact.idToName(Integer.parseInt(r.artfID[j])));
+                
+                if(j+1 == r.artfID.length-1) {
+                    System.out.print(" and ");
+                } else if(j+1 < r.artfID.length-1) {
+                    System.out.print(", ");
+                }
+            }
+
+            System.out.println();
+        }
     }
 
 }

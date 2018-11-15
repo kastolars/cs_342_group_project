@@ -57,6 +57,18 @@ public class Craftable extends Artifact {
         crafted.add(this);
     }
 
+    @Override
+    public int getMeta() {
+        return metaData;
+    }
+
+    @Override
+    public void updateMeta(int newData) {
+        this.metaData = newData;
+
+        //return 1;
+    }
+
     /*public static int Recipe(Scanner recp_scn) {
 
         String next = CleanLineScanner.getCleanLine(recp_scn);

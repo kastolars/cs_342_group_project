@@ -1,3 +1,5 @@
+import static java.lang.Math.abs;
+
 public class Direction {
     private int id;
     private DirType dir;
@@ -6,12 +8,13 @@ public class Direction {
     private boolean locked;
     private int lockPattern;
 
-    public Direction(int id, int sourceId, int destId, int lockPattern) {
-        this.id = id;
+    public Direction(int id, int sourceId, String type, int destId, int lockPattern) {
+        this.id = abs(id);
         this.source = Place.getPlaceById(sourceId);
-        this.destination = Place.getPlaceById(destId);
+        this.dir = DirType.valueOf(type);
+        this.destination = Place.getPlaceById(abs(destId));
         this.locked = destId < 0;
-        this.lockPattern = lockPattern;
+        this.lockPattern = abs(lockPattern);
     }
 
     public boolean match(String s) {

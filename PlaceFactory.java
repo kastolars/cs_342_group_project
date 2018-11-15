@@ -9,8 +9,10 @@ public class PlaceFactory {
 
             // Get ID and Name
             int ID = Integer.parseInt( sc.next() );
-            String line = CleanLineScanner.getCleanLine(sc);
-            String name = line.substring(line.indexOf(String.valueOf(ID)) + String.valueOf(ID).length()).trim();
+            // String line = CleanLineScanner.getCleanLine(sc);
+            String line = sc.nextLine().trim();
+            String name = line;
+            // System.out.println(name);
 
             // System.out.println(name);
             // Get number of description lines

@@ -39,7 +39,7 @@ public class Recipe {
             this.artfID = next.split(" ", -1);
 
             this.description = CleanLineScanner.getDescription(recp_scn);
-            System.out.println();
+            // System.out.println();
 
             recipes.add(this);
         }

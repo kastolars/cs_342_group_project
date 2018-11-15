@@ -3,6 +3,9 @@ import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
 import java.util.stream.Stream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * AUTHOR: lpaltz2 -- hw3
@@ -37,9 +40,34 @@ public class NPC extends Character implements DecisionMaker{
         mana = 0;
         lives = 1;
     }
-/*
-    public Move getMove(Character actor, Place room){
-        return new Move( actor, room );
+
+    public Move getMove(){
+        // AI move
+        ArrayList<Move.MoveType> moves = new ArrayList<Move.MoveType>(
+                                    Arrays.asList(  Move.MoveType.GO, 
+                                                    Move.MoveType.GET, 
+                                                    Move.MoveType.DROP, 
+                                                    Move.MoveType.USE,
+                                                    Move.MoveType.STAY )
+                                    );
+
+        Collections.shuffle( moves );
+
+        Move.MoveType move = moves.get(0);
+        String args = "";
+
+        if( move.equals( Move.MoveType.GO ) )
+            args = getCurrentPlace().getRandomDirection();
+        else if( move.equals( Move.MoveType.GET ) )
+            args = getCurrentPlace().randItem();
+        else if( move.equals( Move.MoveType.USE ) )
+            args = randItem();
+        else if( move.equals( Move.MoveType.DROP ) )
+            args = randItem();
+        else
+            args = "";
+
+        return new Move( move.toString() + " " + args );
     }
     public void makeMove(){
         PrintStream tmp = System.out;
@@ -55,8 +83,8 @@ public class NPC extends Character implements DecisionMaker{
 
         System.out.print(CColor.RED);
 
-        getMove( this, Place.getPlaceByID(placeID) )
-            .execute(); 
+        getMove()
+            .execute( this, Place.getPlaceById(placeID) ); 
 
         System.out.print(CColor.RESET);
 
@@ -72,5 +100,5 @@ public class NPC extends Character implements DecisionMaker{
         health = 100;
         mana = 0;
     }
-*/
+
 }

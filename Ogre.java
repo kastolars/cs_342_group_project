@@ -15,7 +15,7 @@ public class Ogre extends NPC{
         mana = 100;
         lives = 5;
     }
-/*
+
     protected void lifeCheck(){
         lives--;
         health = 200;
@@ -25,5 +25,5 @@ public class Ogre extends NPC{
     public void cast(String spell, Place p){
         System.out.println("  ... nothing happened ... ");
     }
-*/
+
 }

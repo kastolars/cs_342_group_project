@@ -7,6 +7,8 @@
  *  
  */
 
+import java.util.Scanner;
+
 public interface DecisionMaker{
-//    public Move getMove(Character actor, Place room);
+    public Move getMove();
 }

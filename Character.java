@@ -187,7 +187,7 @@ public abstract class Character {
 
     public void print(){ System.out.println( this ); }
 
-    public void printItems(){ System.out.printf("ITEMS\n%s\n", items); }
+    public void printItems(){ items.forEach( x -> x.print() ); }
     public void display(){ print(); }
     public void makeMove(){}
 
@@ -260,7 +260,7 @@ public abstract class Character {
         // placeID, name, description
     }
 
-//    abstract protected void lifeCheck();
+    abstract protected void lifeCheck();
 
     public void takeDamage(int h){
         health -= h;
@@ -308,6 +308,6 @@ public abstract class Character {
 
     public int ID(){ return ID; }
 
-//    abstract public void cast(String spell, Place p);
+    abstract public void cast(String spell, Place p);
 
 }

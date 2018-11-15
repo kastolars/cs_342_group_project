@@ -14,7 +14,7 @@ public class Sage extends NPC{
         mana = 100;
         lives = 5;
     }
-/*
+
     protected void lifeCheck(){
         lives--;
         health = 30;
@@ -24,5 +24,4 @@ public class Sage extends NPC{
     public void cast(String spell, Place p){
         System.out.println("  ... nothing happened ... ");
     }
-*/
 }

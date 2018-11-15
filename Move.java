@@ -87,10 +87,12 @@ public class Move {
 		return this.arg;
 	}
 
-	public void execute(Character c, Place charLoc, Move m) {
+	public void execute(Character c, Place charLoc) {
 
-		MoveType mv = m.getType();
-		String arg = m.args();
+		MoveType mv = getType();
+		String arg = args();
+
+        // System.out.println(mv + " " + arg);
 
 		switch(mv) {
 
@@ -122,25 +124,7 @@ public class Move {
 				//this.canRepeat = true;
 				break;
 			
-			/*case DISPLAY:
 
-				if(this.hintCount == 0) {
-					System.out.println("\n\nYou have used up all your hints.\nFrom here on out you must procede with caution");
-					break;
-				}
-				
-				this.hintCount--;
-				this.print();
-				this.charLoc.display();
-				for(int i = 0; i < this.char_artf.size(); i++) {
-					System.out.println("\nName: " + this.char_artf.get(i).name()
-									+ "\nValue: " + this.char_artf.get(i).value()
-									+ "\tMobility: " + this.char_artf.get(i).size()
-									+ "\nDescription: " + this.char_artf.get(i).description());
-				}
-
-				this.canRepeat = true;
-				break;*/
 			case GET:
 
 				if(charLoc.hasArtifact( arg ))
@@ -219,42 +203,4 @@ public class Move {
 		
 		}
 	}
-
-
-	/* Updates the Collection of Characters in Character class and Game class.
-	 * If a player character exits this will remove it from the both classes and
-	 * update the internal counter to determine when to exit the game, that is,
-	 * if no player characters are present the game will stop playing even if there
-	 * are NPC present in the game.
-	 */
-	/*public void exit() {
-		
-		if(c instanceof Player && playable > 0) {
-			playable--;
-			Game.charcUpdate(c, 0);
-		}
-
-		if(playable == 0){
-			System.out.println("All players have exited the game...\n\n");
-			System.exit(0);
-		}
-
-		charLoc.removeCharacter(this);
-		character.remove(this);
-	}*/
-
-
-	/* Removes character when from the personal list when a character (player or NPC)
-	 * exits the game.
-	 */
-	/*public static void charcUpdate(Character c, int flag) {
-		
-		if(flag == 0){
-			charc.remove(c);
-		} else if(flag == 1){
-			charc.add(c);
-		}
-
-		//charc.remove(c);
-	}*/
 }

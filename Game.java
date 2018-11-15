@@ -78,7 +78,7 @@ public class Game {
         }
     }
 
-    private void threeOne( Scanner parser, int charNum ){}/*
+    private void threeOne( Scanner parser, int charNum ){
         int count; // counter for # of entries under each section
 
         // if charNum < 0 use max(1, default token)
@@ -91,7 +91,7 @@ public class Game {
 
             parser.next(); // Direction token
             count = Integer.parseInt( parser.next() ); // Direction count (int)
-            DirectionFactory.makePlaces( parser, count );
+            DirectionFactory.makeDirections( parser, count );
 
             parser.next(); // Artifact token
             count = Integer.parseInt( parser.next() ); // Artifact (int)
@@ -113,9 +113,8 @@ public class Game {
         // System.out.println( "GAME::" + Place.getPlaceByID(23) );
         // Place.knownPlaces().forEach( x -> System.out.println(x+"\n"));
     }
-*/
 
-    private void fourZero( Scanner parser, int charNum ){}/*
+    private void fourZero( Scanner parser, int charNum ){
         int count; // counter for # of entries under each section
 
         // if charNum < 0 use max(1, default token)
@@ -128,7 +127,7 @@ public class Game {
             
             parser.next(); // Direction token
             count = Integer.parseInt( parser.next() ); // Direction count (int)
-            DirectionFactory.makePlaces( parser, count );
+            DirectionFactory.makeDirections( parser, count );
 
             parser.next(); // Character token
             count = Integer.parseInt( parser.next() ); // Character (int)
@@ -183,7 +182,7 @@ public class Game {
         // System.out.println( "GAME::" + Place.getPlaceByID(23) );
         // Place.knownPlaces().forEach( x -> System.out.println(x+"\n"));
     }
-*/
+
     private void fiveTwo( Scanner parser, int charNum ){
         int count;
 
@@ -268,7 +267,7 @@ public class Game {
     }
 
     public void play(){
-/*
+
         System.out.println("  WELCOME TO " + name + "\n");
 
         try{
@@ -287,7 +286,6 @@ public class Game {
         finally{
             GameTester.quit();
         }
-*/
     }
 
     public void print(){

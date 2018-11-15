@@ -76,4 +76,8 @@ public class Direction {
                 System.out.println(s);
         }
     }
+
+    public String type(){
+        return this.dir.abbreviation;
+    }
 }

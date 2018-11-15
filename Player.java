@@ -30,16 +30,18 @@ public class Player extends Character implements DecisionMaker{
         mana = 100;
         lives = 3;
     }
-/*
-    public Move getMove(Character actor, Place room){
-        return new Move(actor, room);
+
+    public Move getMove(){
+        getCurrentPlace().display();
+        System.out.print("\n" + name() + " -> ");
+        return new Move( KeyboardScanner.getKeyboardScanner().nextLine() );
     }
 
     public void makeMove(){
         System.out.print(color);
 
-        getMove( this, Place.getPlaceByID(placeID) )
-            .execute();
+        getMove()
+            .execute( this, Place.getPlaceById(placeID) );
 
         System.out.print(CColor.RESET);
     }
@@ -53,5 +55,5 @@ public class Player extends Character implements DecisionMaker{
     public void cast(String spell, Place p){
         System.out.println("  ... nothing happened ... ");
     }
-*/
+
 }

@@ -108,6 +108,19 @@ public class Place {
 
     public String name(){ return name; }
 
+    public String randItem(){
+        return Artifact.randItem( artifacts );
+    }
+
+    public String getRandomDirection(){
+        if (id == 0){
+            return "";
+        }
+        ArrayList<Direction> randDir = new ArrayList<>(directions);
+        Collections.shuffle(randDir);
+        return randDir.get(0).type();
+    }
+
     public static int getRandomPlaceID(){
         ArrayList<Integer> p = new ArrayList<Integer>( places.keySet() );
         p.remove(0);

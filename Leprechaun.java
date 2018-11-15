@@ -14,7 +14,7 @@ public class Leprechaun extends NPC{
         mana = 100;
         lives = 5;
     }
-/*
+
     protected void lifeCheck(){
         lives--;
         health = 50;
@@ -24,5 +24,5 @@ public class Leprechaun extends NPC{
     public void cast(String spell, Place p){
         System.out.println("  ... nothing happened ... ");
     }
-*/
+
 }

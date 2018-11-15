@@ -48,7 +48,7 @@ public class Artifact {
         try{
 		if((destID < 0)) {
 			Character User = Character.getCharacterByID( Math.abs(destID) );
-            System.out.println(User);
+            // System.out.println(User);
 			User.addArtifact(this);
 		} else if(destID > 0) {
 			//place

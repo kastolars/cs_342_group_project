@@ -1,3 +1,12 @@
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+ * Group: 34
+ * Homework 4: Group Project
+ * Description: Extends Direction to allow for instant travel from one place
+ *              to another. When passed through the portal the character is
+ *              teleported to Enterance Hall or the first place in the GDF
+ *              file.
+ */
+
 import java.util.HashSet;
 import java.util.Scanner;
 

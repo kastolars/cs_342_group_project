@@ -31,7 +31,7 @@ public class GameTester {
         String luke = "Luke Paltzer -- lpaltz2\n";
         String kar = "Karol Stolarski -- kstola2\n";
         String ayu = "Ayush Patel -- apate324\n";
-        String groNum = "Group: 34"
+        String groNum = "Group: 34\n";
         System.out.println( luke + kar + ayu + groNum );
     }
 

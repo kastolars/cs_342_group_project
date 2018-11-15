@@ -35,12 +35,7 @@ public class Craftable extends Artifact {
         this.metaData = meta;
         
     }
-
-    public Craftable(int id, int value, int meta, String name, String desc) {
-        super(id, value, meta, name, desc);
-
-        crafted.add(this);
-    }
+    
 
     @Override
     public int getMeta() {

@@ -1,3 +1,11 @@
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+ * Group: 34
+ * Homework 4: Group Project
+ * Description: Used to construct and create recipes from the GDF file.
+ *              Has fucntion that take in character to create artifact from the
+ *              known recepies and store it in their inventory.
+ */
+
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -66,7 +74,8 @@ public class Recipe {
         return recipes.size();
     }
     
-    //PROBABLY NEED IT
+    //Checks if we have a recipe for the artifact
+    //user wants to craft
     public static int HasRecipe(String name) {
 
         //System.out.println(name);
@@ -144,6 +153,7 @@ public class Recipe {
     }
 
 
+    //crafts an artifact based on th recipe
     public Artifact Craft(Character c) {
 
         Artifact n;
@@ -159,6 +169,7 @@ public class Recipe {
 
     }
 
+    //Displays the recipes in the recipe book
     public static void display() {
         for(int i = 0; i < recipes.size(); i++) {
             Recipe r = recipes.get(i);

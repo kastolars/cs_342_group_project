@@ -50,13 +50,13 @@ public class Direction {
     //the direction
     public void useKey(Artifact a, Character c) {
         if(a.pattern() == lockPattern) {
-			ID = ID * -1;
+		    id = id * -1;
 			
-			if(ID > 0) {
+			/*if(id > 0) {
 				System.out.println("Someone Unlocked a Room. Hurry before it gets locked again...\n");
 			} else {
 				System.out.println("Someone Locked a Room. Choose your path carefully...\n");
-			}
+			}*/
 		}
     }
 

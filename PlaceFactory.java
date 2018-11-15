@@ -1,3 +1,10 @@
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+ * Group: 34
+ * Homework 4: Group Project
+ * Description: Factory method to read and initialize all the places present
+ *              in GDF file. This is used to implement different types of rooms
+ */
+
 import java.util.Scanner;
 
 public class PlaceFactory {

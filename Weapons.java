@@ -1,3 +1,10 @@
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+ * Group: 34
+ * Homework 4: Group Project
+ * Description: Extends Artifact class to implement weapons that can be used as
+ *              deal damage to opponents. Future expansion is available.
+ */
+
 
 import java.util.Random;
 

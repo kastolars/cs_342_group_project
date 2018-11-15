@@ -59,7 +59,6 @@ public class Artifact {
 		}
         }catch(Exception e){ e.printStackTrace(); }
 
-		numAdded++;
 		//placeID.addArtifact(this);		//adds to the artifact collection of the the placeID Place
 		artf.add(this);
 

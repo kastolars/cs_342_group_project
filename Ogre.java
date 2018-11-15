@@ -1,3 +1,13 @@
+
+
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+ * Group: 34
+ * Homework 4: Group Project
+ * Description: Extends the NPC class initialize essential data for the
+ *              character like health, lives etc.
+ */
+
+
 import java.util.Scanner;
 
 public class Ogre extends NPC{

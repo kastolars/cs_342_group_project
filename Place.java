@@ -1,3 +1,17 @@
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+ * Group: 34
+ * Homework 4: Group Project
+ * Description: Place constructor holds all the information about the Place, id, name,
+ *              description. It also holds a static collection of all the places along with
+ *              list of all the characters and artifacts in the room.
+ *              --> useKey() takes in a keya and characters and tries to open all the doors
+ *                  or directions through this room.
+ *              --> Generates random places, characters in places and directions in the places
+ *                  that can be used by other classes.
+ */
+
+
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Collections;
@@ -40,6 +54,9 @@ public class Place {
         directions.add(d);
     }
 
+
+    //Follow the direction passed in if the direction exist set to new place
+    //if not return current place
     public Place followDirection(String s){
         for (Direction d : directions){
             if (d.match(s)){
@@ -53,14 +70,21 @@ public class Place {
         return this;
     }
 
+    public int ID() {
+        return id;
+    }
+
+    //add characters to the collection
     public void addCharacter(Character c){
         characters.add(c);
     }
 
+    //remove characters from the collections
     public void removeCharacter(Character c){
         characters.remove(c);
     }
 
+    //add artifact to the collection
     public void addArtifact(Artifact a){
         artifacts.add(a);
     }
@@ -86,6 +110,7 @@ public class Place {
         return characters;
     }
 
+    //Use the key on all directions in the current room
     public void useKey(Artifact a, Character c) {
         for (Direction d : directions){
             d.useKey(a, c);
@@ -101,6 +126,7 @@ public class Place {
         return false;
     }
 
+    //remove an item from the room and return it to the character
     public Artifact popItem(String s){
         for (Artifact a : artifacts){
             if (a.name().matches("(?i)" + s)){
@@ -118,6 +144,7 @@ public class Place {
         return Artifact.randItem( artifacts );
     }
 
+    //get random directions
     public String getRandomDirection(){
         if (id == 0){
             return "";
@@ -127,6 +154,7 @@ public class Place {
         return randDir.get(0).type();
     }
 
+    //Get random place from ID
     public static int getRandomPlaceID(){
         ArrayList<Integer> p = new ArrayList<Integer>( places.keySet() );
         p.remove(0);
@@ -135,6 +163,7 @@ public class Place {
         return p.get(0);
     }
 
+    //Get random character present in the room
     public Character getRandomCharacter(Character c){
         ArrayList<Character> chars = new ArrayList<Character>(characters);
         Collections.shuffle(chars);

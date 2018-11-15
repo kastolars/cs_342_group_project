@@ -98,7 +98,7 @@ public class Move {
 		MoveType mv = getType();
 		String arg = args();
 
-        // System.out.println(mv + " " + arg);
+         System.out.println(mv + " " + arg);
 
 		switch(mv) {
 
@@ -112,12 +112,16 @@ public class Move {
 					tempCurr = charLoc.followDirection(arg);
 				}
 
+				int id = tempCurr.ID();
+				c.moveToPlace(id);
+
 				if(tempCurr == charLoc && c instanceof Player){
 					//this case only happens when user input direction does not exist in this room
 					System.out.println("\nThere was either no Room in that direction or\n"
 										+ "You entered wrong input check and Try Again.\n");
 				} else {
 					charLoc = tempCurr;
+					//System.out.println(charLoc.name());
 				}
 
 				charLoc.addCharacter(c);

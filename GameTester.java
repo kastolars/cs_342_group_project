@@ -25,7 +25,10 @@ public class GameTester {
     public GameTester(){
         // .apply() calls each lamda from a high order function
         // use null to apply(Void)
-        System.out.println( "NAMES" );
+        String luke = "Luke Paltzer -- lpaltz2\n";
+        String kar = "Karol Stolarski -- kstola2\n";
+        String ayu = "Ayush Patel -- apate324\n";
+        System.out.println( luke + kar + ayu );
     }
 
     //GAME reference is constant -- cannot be assigned by can be modified

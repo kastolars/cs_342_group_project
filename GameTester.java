@@ -13,6 +13,9 @@
  *      GDF = mysticCity40.gdf
  */
 
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.io.PrintWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -55,7 +58,7 @@ public class GameTester {
             //GAME = new Game(mapName, cNum);
             GAME = new Game(
 
-                new Scanner( new File( Game.cleanGDF(mapName) ) ), 
+                new Scanner( new File( GameTester.cleanGDF(mapName) ) ), 
                 cNum 
             );
 
@@ -79,6 +82,48 @@ public class GameTester {
         }
         catch(Exception e){
             return false;
+        }
+    }
+
+    // handle the quitting of the game
+    // remove the temporary .cl file
+    // exit from the game -- ie kill program
+    public static void quit(){
+        try{
+            Arrays.stream(new File(".")
+                    .listFiles((f, p) -> p.endsWith(".cl")))
+                    .forEach(File::delete);
+                                            
+        } catch(Exception e){
+            System.out.println("Failed to remove *.cl");
+        }
+
+        System.exit(0);
+    }
+
+    // Generate a comment free GDF 
+    // If cannot be generated return the original GDF
+    //   ->  (will cause problems with parse alignment)
+    // Open a Writer
+    // If the line has a comment add up until that to the clean file
+    // Otherwise add the whole line
+    // The Professor has indicated this is acceptable over getCleanLine()
+    public static String cleanGDF( String gameName ){
+        try{
+            PrintWriter writer = new PrintWriter(gameName + ".cl", "UTF-8");
+            Files.lines(FileSystems.getDefault().getPath(".", gameName))
+                    .forEachOrdered(x -> {
+                        if(x.contains("//"))
+                            writer.append(x.substring(0, 
+                                        x.indexOf("//")) + "\n");
+                        else
+                            writer.append(x + "\n");
+                    });
+            writer.close();
+            return gameName + ".cl";
+        } catch (IOException e) {
+            System.out.println("\n--WARN-- Could not clean gdf file.\n");
+            return gameName;
         }
     }
 

@@ -249,6 +249,7 @@ public class Game {
 
             count = Integer.parseInt( parser.next() ); // Recipe (int)
             i = 0;
+            String next = parser.nextLine();
             while( parser.hasNextLine() && i < count ) {
                 //String s = CleanLineScanner.getCleanLine(game_scn);
                 Recipe r = new Recipe( parser );

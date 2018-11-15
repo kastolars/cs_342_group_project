@@ -23,7 +23,12 @@ public class Recipe {
         } else {
 
             this.name = next;
+
+            //System.out.println(next);
             next = CleanLineScanner.getLine(recp_scn);
+            next = next.trim();
+
+            //System.out.println(next);
 
             String data[] = next.split(" ", -1);
             this.ID = Integer.parseInt(data[0]);

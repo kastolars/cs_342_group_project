@@ -1,6 +1,6 @@
-/**
- * AUTHOR: lpaltz2 -- hw3
- * DATE: October 25, 2018
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+ * Group: 34
+ * Homework 4: Group Project
  * 
  * DESCRIPTION:
  *  This Class passes a GDF file to Game
@@ -31,7 +31,8 @@ public class GameTester {
         String luke = "Luke Paltzer -- lpaltz2\n";
         String kar = "Karol Stolarski -- kstola2\n";
         String ayu = "Ayush Patel -- apate324\n";
-        System.out.println( luke + kar + ayu );
+        String groNum = "Group: 34"
+        System.out.println( luke + kar + ayu + groNum );
     }
 
     //GAME reference is constant -- cannot be assigned by can be modified

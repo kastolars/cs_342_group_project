@@ -26,23 +26,7 @@ public class Weapons extends Artifact {
         this.keyPattern = keyPattern;
         this.destID = destID;
         this.metaData = meta;
-
-        /*Random rand = new Random();
         
-        //character
-		/*if((destID < 0)) {
-			Character User = Character.getCharacterByID(destID);
-			User.addUsrArtf(this);
-		} else if(destID > 0) {
-		  //place
-			Place Dest = Place.getPlaceByID(destID);
-			Dest.addArtifact(this);
-		} else {
-			//random place
-			//int random = rand.nextInt(Place.place.size() - 2) + 1;
-			Place Dest = Place.place.get(random);
-			Dest.addArtifact(this);
-        }*/
 
     }
 
@@ -60,6 +44,15 @@ public class Weapons extends Artifact {
         } else {
 
             System.out.println("\nUsing Weapon...\n");
+            
+            Character opponent = c.getCurrentPlace().getRandomCharacter(c);
+
+            if(opponent == null) {
+                System.out.println("You can't attack anyone in this room...\n");
+            } else {
+                opponent.takeDamage(metaData);
+            }
+
             //c.takeDamage(metaData);
             
         }

@@ -1,13 +1,12 @@
-/*	Ayush Patel
- *  apate324
- *  Homework #3: Addition of Characters and Inheritance
- *  CS 342: Software Design
- *  Description: Artifact Class -- Holds the constructor for artifacts and adds them to
- *  			 to the Artifacts collection in Place class. Additionally has the use()
- *  			 function that will use the artifact in the current room (currently only
- *  			 keys). When reading through the file if the placeID is less than 0 that means
- *  			 Artifact is in player's possession, it's greater than 0 than it in room with ID
- *  			 and if it's 0 we assign a random room to the artifact and put it there.
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+ * Group: 34
+ * Homework 4: Group Project
+ * Description: Artifact serves as the parent class for other children class like,
+ * 				Weapons, Magic, Potions, Keys and etc. Holds the constructor for artifacts and adds them to
+ *  			to the Artifacts collection in Place class. Additionally has the use()
+ *  			function that will use the artifact in the current room (Torch). New functions include
+ * 				random artifact getter and idToName() which returns the name of the artifact.
+ *				
  */
 
 
@@ -25,7 +24,6 @@ public class Artifact {
 	private int value;
 	private int size;
 	private String description;
-	public static int numAdded;
 	
 	private int ID;
 	private int destID;
@@ -69,14 +67,6 @@ public class Artifact {
 
 	}
 
-	public Artifact (int id, int value, int meta, String name, String description) {
-		this.ID = id;
-		this.value = value % 10;
-		this.name = name;
-		this.description = description;
-		this.keyPattern = 0;
-	}
-
 
 	//getter for arraylist size
 	public static int GetSize() {
@@ -90,22 +80,6 @@ public class Artifact {
 	public void updateMeta(int meta) {
 		return;
 	}
-
-	/* DON'T NEED IT REMOVE ON CLEAN UP + CLEAN UP WEAPON CLASS
-	public void SetDestination(int destID) {
-
-		//Random rand = new Random();
-
-		if((destID < 0)) {
-			Character User = Character.getCharacterByID(destID);
-			User.addArtifact(this);
-		} else if(destID > 0) {
-		  //place
-			Place Dest = Place.getPlaceByID(destID);
-			Dest.addArtifact(this);
-		}
-
-	}*/
 	
 	public int ID() {
 		//returns the ID of the artifact
@@ -138,8 +112,8 @@ public class Artifact {
 	}
 
 	/* uses the artifact:
-	 * -- in case of the Key -- get Current place, from game class
-	 * 						 -- pass the key to useKey() of the curr place
+	 * -- in case of the Torch -- classes illuminate on the current place
+	 * 		and to change darkness setting in the room.
 	 */
 	public void use(Character c) {
 
@@ -147,9 +121,10 @@ public class Artifact {
 			System.out.println("\nWrong Use Method\n");
 		}
 
-		if(this.name().contains("Torch")) {
-
+		if(this.name().contains("Torch")) { 
+			c.getCurrentPlace().illuminate();
 		}
+		
 		
 		/*if(this.name().contains("key")){
 			Place curr = Character.getCurrentPlace(c);
@@ -160,6 +135,7 @@ public class Artifact {
 
 	}
 
+	// returns the String name of the artifact from the ID
 	public static String idToName(int id) {
 		
 		for(int i = 0; i < artf.size(); i++) {

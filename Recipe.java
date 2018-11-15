@@ -17,12 +17,15 @@ public class Recipe {
     public Recipe(Scanner recp_scn) {
         
         String next = CleanLineScanner.getLine(recp_scn);
+        //String next = recp_scn.nextLine();
+        //next = next.trim();
+        System.out.println(next);
 
         if(next.equals("\0") || next.equals(null)) {
 
         } else {
 
-            this.name = next;
+            this.name = next.trim();
 
             //System.out.println(next);
             next = CleanLineScanner.getLine(recp_scn);
@@ -66,8 +69,11 @@ public class Recipe {
     //PROBABLY NEED IT
     public static int HasRecipe(String name) {
 
+        //System.out.println(name);
+
         for(int i = 0; i < recipes.size(); i++) {
             
+            //System.out.print(recipes.get(i).name());
             if(name.equalsIgnoreCase(recipes.get(i).name())) {
                 return i;
             }

@@ -1,11 +1,14 @@
-/*	Ayush Patel
- *  apate324
- *  Homework #3: Addition of Characters and Inheritance
- *  Description: Move class -- Holds the MoveType Enum that has a list of moves either a player
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+ * Group: 34
+ * Homework 4: Group Project
+ * Description: Move class -- Holds the MoveType Enum that has a list of moves either a player
  *  			 or a NPC can make. The Enum has type() method which takes in a string and returns
  *  			 MoveType that it matches. Move constructor takes in a string and generates a Move
  *  			 getting the MoveType associated to it and the arguments passed through that string.
  *  			 Other than this Move also has to methods to return MoveType and agruements.
+ * 				
+ * 				This class now holds the execute method that will create a move and excute it. The excecute
+ * 				methods takes in a Character and its current place.
  */
 
 
@@ -87,6 +90,9 @@ public class Move {
 		return this.arg;
 	}
 
+
+	//this method now makes and executes moves based on the UI or AI input
+	//takes in the character and the current place its in.
 	public void execute(Character c, Place charLoc) {
 
 		MoveType mv = getType();
@@ -167,14 +173,19 @@ public class Move {
 			case CRAFT:
 
 				int index = Recipe.HasRecipe(arg);
+				//System.out.println(index);
 				if(index >= 0) {
 					Recipe r = Recipe.getRecipe(index);
 					Artifact aa = r.MakeArtifact(c);
 
+					System.out.println(aa.name());
+
 					//a.print();
 					if(aa != null) {
-						System.out.println("\n\t~ " + aa.name() + " was crafted. It is now available in your inventory");
+						System.out.println("\n\t~ " + aa.name() + " was crafted. It is now available in your inventory\n");
 					}
+				} else {
+					System.out.println("Nothing");
 				}
 
 				//this.canRepeat = true;

@@ -1,6 +1,6 @@
-/**
- * AUTHOR: lpaltz2 -- hw3
- * DATE: October 25, 2018
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+ * Group: 34
+ * Homework 4: Group Project
  * 
  * DESCRIPTION:
  *  Outlines the requirements to have a decision maker

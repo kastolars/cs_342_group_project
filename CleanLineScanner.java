@@ -1,9 +1,8 @@
-/*
-Author: Karol Stolarski
-netID: kstola2
-
-Clean line scanner allows me to take a line of a file
-and strip away all comments and leading/trailing whitespace.
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+ * Group: 34
+ * Homework 4: Group Project
+ * Description: Clean line scanner allows me to take a line of a file
+				and strip away all comments and leading/trailing whitespace.
  */
 
 import java.util.Scanner;

@@ -1,6 +1,6 @@
-/**
- * AUTHOR: lpaltz2 -- hw3
- * DATE: October 25, 2018
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+ * Group: 34
+ * Homework 4: Group Project
  * 
  * DESCRIPTION:
  *  This class keeps track of the Game state and handles user input
@@ -19,6 +19,7 @@
  *  cleanGDF(String) : String
  *  threeOne() -- version 3.1 support
  *  fourZero() -- version 4.0 support
+ *  fiveTwo()  -- version 5.2 support
  *  quit() -- handle safe exit conditions
  *  
  */
@@ -78,6 +79,7 @@ public class Game {
         }
     }
 
+    //Construction fuction for version 3.0
     private void threeOne( Scanner parser, int charNum ){
         int count; // counter for # of entries under each section
 
@@ -114,6 +116,7 @@ public class Game {
         // Place.knownPlaces().forEach( x -> System.out.println(x+"\n"));
     }
 
+    //Construction function for version 4.0
     private void fourZero( Scanner parser, int charNum ){
         int count; // counter for # of entries under each section
 
@@ -183,6 +186,7 @@ public class Game {
         // Place.knownPlaces().forEach( x -> System.out.println(x+"\n"));
     }
 
+    //Construction Function for version 5.2
     private void fiveTwo( Scanner parser, int charNum ){
         int count;
 
@@ -266,6 +270,7 @@ public class Game {
 
     }
 
+    //Starts the game
     public void play(){
 
         System.out.println("  WELCOME TO " + name + "\n");

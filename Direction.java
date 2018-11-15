@@ -1,3 +1,14 @@
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+ * Group: 34
+ * Homework 4: Group Project
+ * Description: This class creates all the directions for a room and where they lead
+ *              Has an enum with all 18 possible direcitons.
+ *              --> follow (String) : follows the direction and returns the new Place
+ *              --> use(key) : when a room is locked and the lock pattern matches the keypattern
+ *                          unlocks the room.
+ */ 
+
+
 import static java.lang.Math.abs;
 
 public class Direction {
@@ -25,6 +36,7 @@ public class Direction {
         return dir.match(s);
     }
 
+    //follows the direction and if locked notifies
     public Place follow(String s) throws LockedDirectionException {
         if (locked) {
             throw new LockedDirectionException("Door is locked!");
@@ -33,10 +45,22 @@ public class Direction {
         }
     }
 
-    public void useKey(Artifact a, Character c) {
 
+    //uses the key passed in to match the lock patterns and if they match unlocks
+    //the direction
+    public void useKey(Artifact a, Character c) {
+        if(a.pattern() == lockPattern) {
+			ID = ID * -1;
+			
+			if(ID > 0) {
+				System.out.println("Someone Unlocked a Room. Hurry before it gets locked again...\n");
+			} else {
+				System.out.println("Someone Locked a Room. Choose your path carefully...\n");
+			}
+		}
     }
 
+    //Contains all 18 directions 
     protected enum DirType {
         NONE("None", "None"),
         N("North", "N"),

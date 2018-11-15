@@ -30,6 +30,8 @@ public class Place {
         return start;
     }
 
+    public void illuminate(){ }
+
     public static Place getPlaceById(int id){
         return places.get(id);
     }
@@ -80,7 +82,11 @@ public class Place {
         }
     }
 
-    public void useKey(Artifact a, Character c){
+    public ArrayList<Character> getCharacters(){
+        return characters;
+    }
+
+    public void useKey(Artifact a, Character c) {
         for (Direction d : directions){
             d.useKey(a, c);
         }
@@ -127,5 +133,21 @@ public class Place {
         p.remove(1);
         Collections.shuffle(p);
         return p.get(0);
+    }
+
+    public Character getRandomCharacter(Character c){
+        ArrayList<Character> chars = new ArrayList<Character>(characters);
+        Collections.shuffle(chars);
+        
+        if(chars.size() == 0) {
+            return null;
+        }
+
+        Character a = chars.get(0);
+        if (!(a.equals(c))){
+            return a;
+        }
+
+        return null;
     }
 }

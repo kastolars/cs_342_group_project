@@ -1,3 +1,10 @@
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+ * Group: 34
+ * Homework 4: Group Project
+ * Description: Parser for Directions to make directions and pass them to Direction
+ *              constructor.
+ */ 
+
 import java.util.Scanner;
 
 public class DirectionFactory {

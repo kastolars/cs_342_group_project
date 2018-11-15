@@ -1,13 +1,14 @@
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+ * Group: 34
+ * Homework 4: Group Project
+ * Description: Extends Artifact for keys. Primary function is use which overrides
+ *              the default use() function. This function use the key artifact
+ *              to try and unlock directions.
+ */ 
 
 import java.util.Random;
 
 public class Keys extends Artifact {
-
-    /*private int ID;
-    private int value;
-    private int size;
-    private String name;
-    private String desc;*/
 
     private int keyPattern;
     private int destID;
@@ -15,38 +16,17 @@ public class Keys extends Artifact {
     
     public Keys (int ID, int value, int size, String name, String desc, int keyPattern, int destID, int meta) {
 
-        /*this.ID = ID;
-        this.value = value;
-        this.size = size;
-        this.name = name;
-        this.desc = desc;*/
 
         super(ID, value, size, name, desc, keyPattern, destID);
 
         this.keyPattern = keyPattern;
         this.destID = destID;
         this.metaData = meta;
-
-
-        /*Random rand = new Random();
-
-        //character
-		if((destID < 0)) {
-			Character User = Character.getCharacterByID(destID);
-			User.addUsrArtf(this);
-		} else if(destID > 0) {
-		  //place
-			Place Dest = Place.getPlaceByID(destID);
-			Dest.addArtifact(this);
-		} else {
-			//random place
-			int random = rand.nextInt(Place.place.size() - 2) + 1;
-			Place Dest = Place.place.get(random);
-			Dest.addArtifact(this);
-        }*/
-        
     }
 
+
+    //overrides the parent use to call useKey with this artifact to try
+    // and unlock the direction.
     @Override
     public void use(Character c) {
 

@@ -1,3 +1,12 @@
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+ * Group: 34
+ * Homework 4: Group Project
+ * Description: Artifact Factory that reads the GDF file and creates appropriate Artifact types.
+ *              Types include Weapons, Craftable, Potions etc. Once done reading the a private
+ *              function is called that returns the approriate artifact type using the typeID
+ * 
+ */
+
 
 
 import java.util.Scanner;
@@ -7,7 +16,6 @@ import java.util.Random;
 //HAVE TO MAKE SEPARATE .JAVA FILES FOR ALL THE ARTF TYPES!!!
 //MAYBE FACTORY METHOD MIGHT BE EASY BUT WOULD I STILL NEED DIFFERENT
 // .JAVA FILES???
-
 
 public class ArtifactFactory {
 
@@ -47,7 +55,7 @@ public class ArtifactFactory {
 			next = CleanLineScanner.getLine(artf_scn);			//gets the clean line
 			String data[] = next.split(" ", -1);		//splits the line based on spaces
 			
-            this.ID = (Integer.parseInt(data[0])) % 100;	        //ID
+            this.ID = (Integer.parseInt(data[0])) % 100;	 //ID
             this.typeID = Integer.parseInt(data[0]) / 100;  //typeID
 			this.value = Integer.parseInt(data[1]);			//value
 			this.size = Integer.parseInt(data[2]);			//size
@@ -80,6 +88,9 @@ public class ArtifactFactory {
     }
 
 
+
+    //Returns the appropriate Artifact type based on the type ID. No one has access
+    //to this fucntion other than Afrtifact Factory.
     private Artifact TypeArtifact(int typeID) {
 
         switch(typeID) {

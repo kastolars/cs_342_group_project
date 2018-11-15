@@ -5,10 +5,11 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * AUTHOR: lpaltz2 -- hw3
- * DATE: October 25, 2018
+ * Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+ * Group: 34
+ * Homework 4: Group Project
  * 
- * DESCRIPTION:
+ *  DESCRIPTION:
  *  This class outlines the behavior of the Characters
  *  UI and AI are handled here by implementing DecisionMaker
  *  print() : void -- print the debuging info
@@ -23,6 +24,8 @@ import java.util.Scanner;
  *  randItem() : String -- return the name for a given item
  *  addArtifact(Artifact) : void -- add an item to items
  *  moveToPlace(int) : void -- move the character to a place, for init
+ *  takeDamage(int) : void -- does damage to the character
+ *  gainHealth(int) : void -- increases the health of the character
  * 
  *  mana 
  *  health
@@ -64,13 +67,20 @@ public abstract class Character {
         placeID = 0; // nowhere
         try{
             placeID = Integer.parseInt( parser.next() ); // Place id (int)
+            Place n = Place.getPlaceById(placeID);
+            n.addCharacter(this);
+
         } catch(Exception e){ }
 
         if( placeID == 0 )
             placeID = Place.getRandomPlaceID();
+            //placeID.addCharacter(this);
+            Place n = Place.getPlaceById(placeID);
+            n.addCharacter(this);
         
         try{
             ID = Integer.parseInt( parser.next() ); // Place id (int)
+            //placeID.addCharacter(this);
         } catch(Exception e){
             ID = 0; // Bad ID
         }
@@ -103,6 +113,7 @@ public abstract class Character {
         addCharacter(this);
     }
 
+    //characters to the static collection of all characters 
     private void addCharacter(Character character){
         // if no duplicate IDs add(this)
         if( players.stream()
@@ -112,6 +123,7 @@ public abstract class Character {
             players.add(this);
     }
 
+    //gets the character what has passed in ID number
     public static Character getCharacterByID(int id){
         for(Character p : players)
             if(p.equals( id ))
@@ -123,6 +135,8 @@ public abstract class Character {
         return getCharacterByID(0); // ID of noone
     }
 
+    //Returns all the known players
+    //Used to print info about characters or select randomly
     public static ArrayList<Character> knownCharacters(){
         return players;
     }
@@ -141,16 +155,26 @@ public abstract class Character {
             " Desc: " + description + "\n";
     }
 
+    //adds artifacts to the collection of artifacts with the character
     public void addArtifact( Artifact item ){
         if( item == null ) return;
         System.out.printf("-+ Item [%s] Aquired +-\n", item.name() );
         items.add( item );
     }
 
+    //Moves the character from one place to another
+    //removes the character from current room and adds it to next one
     public void moveToPlace(int id){
+        
+        Place from = Place.getPlaceById(placeID);
+        from.removeCharacter(this);
         placeID = id;
+        Place to = Place.getPlaceById(placeID);
+        to.addCharacter(this);
+        
     }
 
+    //returns the current place the character is in
     public Place getCurrentPlace(){
         return Place.getPlaceById( placeID );
     }
@@ -191,6 +215,7 @@ public abstract class Character {
     public void display(){ print(); }
     public void makeMove(){}
 
+    //changes color based on each character. Each one has different color
     private void getColor(){
 
         if( colors == null || colors.size() == 0 ){
@@ -210,6 +235,8 @@ public abstract class Character {
 
     }
 
+    //Factory method to create NPC or Player characters. Takes in a scanner
+    //and reads the file to create different types of characters.
     public static void factory(Scanner parser){
         int placeID = 0; // nowhere
         try{
@@ -259,14 +286,18 @@ public abstract class Character {
 
         // placeID, name, description
     }
-
+    
+    //Checks if the health is zero if so lowers the lives count
     abstract protected void lifeCheck();
 
+    //Does damage to the character and checks if the health is less than
+    //appropiate value and determine if lives need to be reduced.
+    //if all players are dead exits the game
     public void takeDamage(int h){
         health -= h;
 
         if( health < 0 ){
-            // lifeCheck();
+            lifeCheck();
         }
 
         if( lives < 0 ){
@@ -274,8 +305,8 @@ public abstract class Character {
         }
 
         if(!alive){
-            System.out.println("-- You have DIED, thanks for playing :) --");
-            players.remove(this);
+            System.out.println("-- " + name + " have DIED, thanks for playing :) --");
+            //players.remove(this);
         }
 
         if(players.isEmpty()){
@@ -284,6 +315,16 @@ public abstract class Character {
 
             GameTester.quit();
         }
+
+        System.out.println("\nHealth: " + health + "\nLives: " + lives + "\n");
+    }
+
+    //Increases the health of the character when they take a potion or put on
+    //an armour
+    public void GainHealth(int h){
+        health += h;
+
+        System.out.println("\nHealth: " + health + "\n");
     }
 
     protected void useMana(){

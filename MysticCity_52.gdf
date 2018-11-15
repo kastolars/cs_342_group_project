@@ -20,7 +20,7 @@ There are doors to the south and the east
 You have found a storeroom full of gold, jewels, and treasure!
 There are doors to the north, south, and east.
 
-22	Pool of Enchantment	// PE
+-22	Pool of Enchantment	// PE
 4
 You are in a round room with a clear enchanting pool of water.
 There are doors to the north and west.
@@ -103,7 +103,7 @@ DIRECTIONS 35	//Thirty five directions defined ( No number 15 )
 9	22	W	12	0	// PE to EH
 
 
--10	12	D	-11	1001	// EH to PS, locked
+10	12	D	-11	-1001	// EH to PS, locked
 11	11	U	-12	1001	// PS to EH, locked
 12	22	D	21	0	// PE to PL
 
@@ -114,7 +114,7 @@ DIRECTIONS 35	//Thirty five directions defined ( No number 15 )
 16	21	E	101	0	//PL to C1
 17	101	NE	102	0	//C1 to C2
 18	102	SE	103	0	//C2 to C3
-19	103 	SSE	104	0	//C3 to C4
+-19	103 	SSE	104	0	//C3 to C4
 20	104 	WSW	105	0	//C4 to C5
 21	105 	SSW	106	0	//C5 to C6
 22	106	S	107	0	//C6 to C7
@@ -148,7 +148,7 @@ PLAYER 		 12		// A player in the Entrance Hall, where expected
 Zaphod Beeblebrox is the President of the Universe
 He has 2 heads and 3 arms, and likes to have a good time.
 
-NPC		13		// An Ogre is a non-player character Hanging out in the Ogre's Lair
+NPC		12		// An Ogre is a non-player character Hanging out in the Ogre's Lair
 2		The Ugly Green Ogre
 2
 The Ugly Green Ogre is huge, green, slimy, and ill-tempered.
@@ -183,7 +183,7 @@ ARTIFACTS	21	// Semi-random artifacts - New ones at the beginning. Add a line fo
 1
 Lighten up's this bitch
 
-12
+-42
 129	100	3	0	Fire Blade	//weapon
 35
 3
@@ -205,7 +205,7 @@ Dark power in a glossy bottle that reads, "Can cause blinding dust
 if left open". Maybe it can be used to make a weapon or a trap perhaps?
 
 
-0		//Change later to accomated the parchment "map location"
+-42		//Change later to accomated the parchment "map location"
 526	10	1	0	Recipe Book	//skill improvement
 1
 3
@@ -213,7 +213,7 @@ Recipe Book contains the recipes to make shield potions, armor,
 etc using Wood, Metal, and other craftable items. Will only give recipe
 to craft the item to level one.
 
-0
+-42
 425	1	1	0	Wood		//materials for armor
 50
 2

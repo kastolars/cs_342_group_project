@@ -17,6 +17,7 @@ public class Portal extends Direction {
         if (activated){
             super.follow(s);
         }
+        System.out.println("\nThere and back again\n");
         return Place.getStart();
 //        Scanner sc = KeyboardScanner.getKeyBoardScanner();
 //        int choice;

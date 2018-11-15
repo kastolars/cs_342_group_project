@@ -23,12 +23,9 @@
  *  
  */
    
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -38,57 +35,11 @@ public class Game {
     
     private final String name;
 
-    // call Game() with the clean file that was generated
-    public Game(String gameName, int charNum) throws FileNotFoundException{
-        this(new Scanner(new File( cleanGDF(gameName) )), charNum);
-    }
-
     private void initialize(){
-        // items = new ArrayList< Artifact >();
-
-        addPlace  (new Place(1, "EXIT",
-                                "\n*Congrats on reaching the exit" +
-                                "\n*Perhaps a harder trial should be " +
-                                "prepared to test your mettle" +
-                                "\n*TaTa for now")
-                    );  // include a Place exit -- ID 1 -- Place[1]
-
-        addPlace  (new Place(0, "NOWHERE",
-                                "\n*Abandon All Hope Ye Who Enter Here" +
-                                "\n*Curse your luck that you have " + 
-                                "wandered here" +
-                                "\n*This is NOWHERE, there is no escape")
-                    ); // include a Place NOWHERE -- ID 0 -- Place[2] -- spooky
 
         Character.knownCharacters().add( 
                 new NPC( 0, "NOONE", "*A deathly skeleton\n" )
             );
-    }
-
-    // Generate a comment free GDF 
-    // If cannot be generated return the original GDF
-    //   ->  (will cause problems with parse alignment)
-    // Open a Writer
-    // If the line has a comment add up until that to the clean file
-    // Otherwise add the whole line
-    // The Professor has indicated this is acceptable over getCleanLine()
-    public static String cleanGDF( String gameName ){
-        try{
-            PrintWriter writer = new PrintWriter(gameName + ".cl", "UTF-8");
-            Files.lines(FileSystems.getDefault().getPath(".", gameName))
-                    .forEachOrdered(x -> {
-                        if(x.contains("//"))
-                            writer.append(x.substring(0, 
-                                        x.indexOf("//")) + "\n");
-                        else
-                            writer.append(x + "\n");
-                    });
-            writer.close();
-            return gameName + ".cl";
-        } catch (IOException e) {
-            System.out.println("\n--WARN-- Could not clean gdf file.\n");
-            return gameName;
-        }
     }
 
     //Construct the game by stepping through the tokens and assigning them
@@ -117,6 +68,8 @@ public class Game {
             threeOne( parser, charNum ); // version 3.1 parser
         else if ( version == 4.0f )
             fourZero( parser, charNum ); // version 4.0 parser
+        else if ( version == 5.2f )
+            fiveTwo( parser, charNum ); // version 5.2 parser
         else{
             System.out.printf("--ERROR-- GDF Version not supported\n");
             quit();
@@ -133,18 +86,16 @@ public class Game {
         try{
             parser.next(); // Place token
             count = Integer.parseInt( parser.next() ); // Place count (int)
-            for(int i = 0; i < count; i++)
-                new Place( parser );
-            
+            PlaceFactory.makePlaces( parser, count );
+
             parser.next(); // Direction token
-            count = Integer.parseInt( parser.next() ); // Direction (int)
-            for(int i = 0; i < count; i++)
-                new Direction( parser );
+            count = Integer.parseInt( parser.next() ); // Direction count (int)
+            DirectionFactory.makePlaces( parser, count );
 
             parser.next(); // Artifact token
             count = Integer.parseInt( parser.next() ); // Artifact (int)
             for(int i = 0; i < count; i++)
-                new Artifact( parser );
+                new ArtifactFactory( parser );
 
             Character.knownCharacters()
                         .add( new Player( 1, "Player One", 
@@ -172,15 +123,13 @@ public class Game {
         try{
             parser.next(); // Place token
             count = Integer.parseInt( parser.next() ); // Place count (int)
-            for(int i = 0; i < count; i++)
-                new Place( parser );
+            PlaceFactory.makePlaces( parser, count );
             
             parser.next(); // Direction token
-            count = Integer.parseInt( parser.next() ); // Direction (int)
-            for(int i = 0; i < count; i++)
-                new Direction( parser );
+            count = Integer.parseInt( parser.next() ); // Direction count (int)
+            DirectionFactory.makePlaces( parser, count );
 
-            parser.next(); // Direction token
+            parser.next(); // Character token
             count = Integer.parseInt( parser.next() ); // Character (int)
             int players = 0;
 
@@ -221,7 +170,7 @@ public class Game {
 
             count = Integer.parseInt( parser.next() ); // Artifact (int)
             for(int i = 0; i < count; i++)
-                new Artifact( parser );
+                new ArtifactFactory( parser );
 
         } catch (Exception e){
             // e.printStackTrace();
@@ -234,11 +183,73 @@ public class Game {
         // Place.knownPlaces().forEach( x -> System.out.println(x+"\n"));
     }
 
-    public void play(){
-        play(12);  // 12 is the default start location ( Enterance Hall )
+    private void fiveTwo( Scanner parser, int charNum ){
+        int count;
+
+        try{
+            parser.next(); // Place token
+            count = Integer.parseInt( parser.next() ); // Place count (int)
+            PlaceFactory.makePlaces( parser, count );
+
+            parser.next(); // Direction token
+            count = Integer.parseInt( parser.next() ); // Direction count (int)
+            DirectionFactory.makePlaces( parser, count );
+
+            if(count < charNum){
+                for(int i = 0; i <= charNum - count; i++)
+                    new NPC( i*100,
+                             "NPC " + i*100,
+                             "*An auto generated NPC\n" );
+            }
+            else{
+                count = charNum;
+            }
+            
+            for(int i = 0; i < count; i++){
+                String tok = parser.next();
+                
+                if( tok.equalsIgnoreCase("player") ){
+                    new Player( parser );
+                    players++;
+                }
+                else if ( tok.equalsIgnoreCase("npc") )
+                    Character.factory( parser );
+            }
+
+            // you need at least one player -- no exceptions
+            if(players == 0){
+                new Player( 1, 
+                            "Player One", 
+                            "*An auto generated player one\n"
+                        );
+
+                Character.getCharacterByID(1).moveToPlace(12);
+            }
+
+            // walk until you find the appropriate token
+            while ( !parser.next().equals("ARTIFACTS") ) ; // Get Artifact token
+
+            count = Integer.parseInt( parser.next() ); // Artifact (int)
+            for(int i = 0; i < count; i++)
+                new ArtifactFactory( parser );
+
+            while ( !parser.next().equals("RECIPES") ) ; // Get Recipe token
+
+            count = Integer.parseInt( parser.next() ); // Recipe (int)
+            for(int i = 0; i < count; i++)
+                new Recipe( parser );
+        }
+        catch (Exception e){
+            // e.printStackTrace();
+            System.out.printf("--ERROR-- Malformed number of { Atrifacts" +
+                        " || Directions || Places }\n");
+            GameTester.quit();
+            System.exit(1);
+        }
+
     }
 
-    public void play(int start){
+    public void play(){
         System.out.println("  WELCOME TO " + name + "\n");
 
         try{
@@ -255,119 +266,8 @@ public class Game {
             e.printStackTrace();
         }
         finally{
-            quit();
+            GameTester.quit();
         }
-    }
-
-    // If the name of the artifact is in items remove that item from items
-    // Return the Artifact that was removed
-    // If no artifact found return null
-    // depricated
-    // private Artifact popItem( String artifact ){
-    //     Artifact foundItem;
-    //     for(Artifact item : items)
-    //         if(item.name().equalsIgnoreCase( artifact )){
-    //             foundItem = item;
-    //             items.remove(item);
-    //             return foundItem;
-    //         }
-    //     return null;
-    // }
-
-    // depricated
-    // private void displayRoom(){
-    //     getCurrentPlace().print();
-    // }
-
-    // Return a item in items if it has the same name
-    // If no such item in items return null
-    // private Artifact selectItem( String artifact ){
-    //     for(Artifact item : items)
-    //         if(item.name().equalsIgnoreCase( artifact )){
-    //             return item;
-    //         }
-    //     return null;
-    // }
-
-    // depricated
-    // private Place getCurrentPlace(){
-    //     return Place.knownPlaces().get(0);
-    // }
-
-    // depricated
-    // private void setCurrentPlace( Place cur ){
-    //     Place.knownPlaces().set(0, cur);
-    // }
-
-    public void addPlace( Place p ){
-        // adds a place by creating a stream of Places that have the same ID
-        // stream.size() == 0 implies no duplicate IDs
-        if( Place.knownPlaces()
-                    .stream()
-                    .filter(x -> x.equals(p))
-                    .count() == 0 ) {
-
-            Place.knownPlaces().add(p);
-        }
-    }
-
-    public void addCharacter( Character p ){
-        // adds a place by creating a stream of Places that have the same ID
-        // stream.size() == 0 implies no duplicate IDs
-        if( Character.knownCharacters()
-                    .stream()
-                    .filter(x -> x.equals(p))
-                    .count() == 0 ) {
-
-            Character.knownCharacters().add(p);
-        }
-    }
-
-    // depricated
-    //used by GameTester::fillGame to load the game based on Place IDs
-    //find Place from
-    //find Place to
-    //construct the relavent direction
-    //if ID < 0 then lock()
-    //add the direction to the from place
-    public void addDirection(int dirID, int fromID, int toID, String dir){
-        Place.knownPlaces()
-                .stream()
-                .filter(x -> x.equals(fromID))
-                .findAny()
-                .ifPresent(
-                    from ->
-                        Place.knownPlaces()
-                                .stream()
-                                .filter(x -> x.equals(Math.abs(toID)))
-                                .findAny()
-                                .ifPresent(
-                                    to -> {
-                                        Direction d = new 
-                                            Direction (dirID, from, to, dir);
-
-                                        if(toID < 0) d.lock();
-
-                                        from.addDirection(d);
-                                    }
-                                )
-                );
-    }
-
-    // handle the quitting of the game
-    // remove the temporary .cl file
-    // exit from the game -- ie kill program
-    public static void quit(){
-        try{
-            Arrays.stream(new File(".")
-                    .listFiles((f, p) -> p.endsWith(".cl")))
-                    .forEach(File::delete);
-                                            
-        } catch(Exception e){
-            System.out.println("Failed to remove *.cl");
-        }
-
-        System.exit(0);
     }
 
     public void print(){

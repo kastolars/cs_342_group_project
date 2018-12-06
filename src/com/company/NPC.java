@@ -1,3 +1,8 @@
+package com.company;
+
+import com.company.DecisionMaker;
+import com.company.Move;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
@@ -26,7 +31,7 @@ import java.util.Collections;
  *  makeMove() : void -- call get move and then executes it
  */
 
-public class NPC extends Character implements DecisionMaker{
+public class NPC extends Character implements DecisionMaker {
     public NPC(Scanner s){
         super(s);
         health = 100;

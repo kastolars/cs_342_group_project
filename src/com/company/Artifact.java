@@ -1,4 +1,4 @@
-/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+package com.company;/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
  * Group: 34
  * Homework 4: Group Project
  * Description: Artifact serves as the parent class for other children class like,
@@ -10,6 +10,8 @@
  */
 
 
+
+import com.company.Place;
 
 import java.util.ArrayList;
 import java.util.Random;

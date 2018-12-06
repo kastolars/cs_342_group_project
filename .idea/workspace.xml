@@ -3,93 +3,38 @@
   <component name="ChangeListManager">
     <list default="true" id="64633280-1f61-4c97-a0bb-9e7f573b319a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Armour.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Armour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Armour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Artifact.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Artifact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Artifact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArtifactFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ArtifactFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ArtifactFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BoobyTrappedDirection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BoobyTrappedDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/BoobyTrappedDirection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CColor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CColor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CleanLineScanner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CleanLineScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CleanLineScanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Craftable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Craftable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Craftable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DarkPlace.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DarkPlace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/DarkPlace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DecisionMaker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DecisionMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/DecisionMaker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Direction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Direction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DirectionFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DirectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/DirectionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GDF format.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GDF format.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/GDF format.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameTester.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GameTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/GameTester.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GrandPubah.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/GrandPubah.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/GrandPubah.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/KeyboardScanner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/KeyboardScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/KeyboardScanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Keys.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Keys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Keys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leprechaun.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leprechaun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Leprechaun.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Magic.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Magic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Magic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maps.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Maps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Move.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MysticCity_52.gdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MysticCity_52.gdf" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MysticCity_52.gdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MysticCity_52.gdf.cl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MysticCity_52.gdf.cl" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MysticCity_52.gdf.cl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NPC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/NPC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ogre.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ogre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Ogre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Place.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Place.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlaceFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PlaceFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/PlaceFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Portal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Portal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Portal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Potions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Potions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Potions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recipe.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Recipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Sage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Sage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scrolls.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scrolls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Scrolls.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Weapons.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Weapons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Weapons.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs_342_group_project.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cs_342_group_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/cs_342_group_project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/makefile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/makefile" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Artifact.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BoobyTrappedDirection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CleanLineScanner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DarkPlace.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Direction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DirectionFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/KeyboardScanner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MysticCity_50.gdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Place.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PlaceFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Portal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Armour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Armour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Artifact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Artifact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/ArtifactFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ArtifactFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/BoobyTrappedDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/BoobyTrappedDirection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/CColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/CleanLineScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CleanLineScanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Craftable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Craftable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/DarkPlace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/DarkPlace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/DecisionMaker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/DecisionMaker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Direction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/DirectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/DirectionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/GameTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/GameTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/GrandPubah.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/GrandPubah.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/KeyboardScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/KeyboardScanner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Keys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Keys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Leprechaun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Leprechaun.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Magic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Magic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Maps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/NPC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/NPC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Ogre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Ogre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Place.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Place.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/PlaceFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/PlaceFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Portal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Portal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Potions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Potions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Recipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Sage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Sage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Scrolls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Scrolls.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Weapons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Weapons.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -175,6 +120,31 @@
           <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="gdf" value="1" />
+          <entry key="java" value="42" />
+          <entry key="txt" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="42" />
+          <entry key="PLAIN_TEXT" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="247" />
+          <entry key="txt" value="14" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="247" />
+          <entry key="PLAIN_TEXT" value="14" />
+        </counts>
+      </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
@@ -219,10 +189,43 @@
         <option value="$PROJECT_DIR$/src/GameTester.java" />
         <option value="$PROJECT_DIR$/src/Direction.java" />
         <option value="$PROJECT_DIR$/src/Place.java" />
+        <option value="$PROJECT_DIR$/src/com/company/IO.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Weapons.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Armour.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Character.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Place.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Direction.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Move.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Player.java" />
+        <option value="$PROJECT_DIR$/src/com/company/DecisionMaker.java" />
+        <option value="$PROJECT_DIR$/src/com/company/KeyboardScanner.java" />
+        <option value="$PROJECT_DIR$/src/com/company/NPC.java" />
+        <option value="$PROJECT_DIR$/src/com/company/CColor.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Artifact.java" />
+        <option value="$PROJECT_DIR$/src/com/company/ArtifactFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/company/CleanLineScanner.java" />
+        <option value="$PROJECT_DIR$/src/com/company/DarkPlace.java" />
+        <option value="$PROJECT_DIR$/src/com/company/DirectionFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Craftable.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Game.java" />
+        <option value="$PROJECT_DIR$/src/com/company/GameTester.java" />
+        <option value="$PROJECT_DIR$/src/com/company/GrandPubah.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Keys.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Leprechaun.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Magic.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Maps.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Ogre.java" />
+        <option value="$PROJECT_DIR$/src/com/company/PlaceFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Potions.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Recipe.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Sage.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Scrolls.java" />
+        <option value="$PROJECT_DIR$/src/com/company/BoobyTrappedDirection.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Portal.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-9" />
     <option name="width" value="978" />
     <option name="height" value="1089" />
@@ -265,7 +268,7 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542269663394" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544126475148" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -374,7 +377,14 @@
       <option name="project" value="LOCAL" />
       <updated>1542265054197</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added IO class">
+      <created>1544125890600</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1544125890600</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -386,7 +396,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="878" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27248323" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -402,10 +412,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32885906" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32885906" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32640332" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32885906" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.32885906" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3261745" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -423,23 +433,10 @@
     <MESSAGE value="Added base of Place and Direction class. Created Secret Interface with Trap and Providence implementations." />
     <MESSAGE value="Added extensions" />
     <MESSAGE value="Added more stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more stuff" />
+    <MESSAGE value="Added IO class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added IO class" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Secret.java" />
-    <entry file="file://$PROJECT_DIR$/src/Providence.java" />
-    <entry file="file://$PROJECT_DIR$/src/Trap.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" selection-start-column="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MysticCity_50.gdf">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BoobyTrappedRoom.java" />
     <entry file="file://$PROJECT_DIR$/src/com/company/cs_342_group_project.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -516,6 +513,274 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/DecisionMaker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="38" column="35" selection-start-line="38" selection-start-column="35" selection-end-line="38" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/KeyboardScanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/NPC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-806">
+          <caret line="33" column="15" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="15" />
+          <folding>
+            <element signature="e#1421#1436#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Armour.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Place.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Weapons.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="10" column="33" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Direction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-357">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Artifact.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/CColor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/ArtifactFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="73">
+          <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/CleanLineScanner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="273" column="19" selection-start-line="273" selection-start-column="19" selection-end-line="273" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/DarkPlace.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Craftable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+          <folding>
+            <element signature="e#667#677#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/GDF format.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/GameTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="27" column="18" lean-forward="true" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/GrandPubah.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/IO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#247#248#0" expanded="true" />
+            <element signature="e#282#283#0" expanded="true" />
+            <element signature="e#409#410#0" expanded="true" />
+            <element signature="e#444#445#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Keys.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Leprechaun.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Magic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Maps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/MysticCity_52.gdf">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Move.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1921">
+          <caret line="15" column="15" lean-forward="true" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Ogre.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/PlaceFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Potions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Recipe.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Sage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Scrolls.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/BoobyTrappedDirection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="13" column="20" lean-forward="true" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/DirectionFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Portal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="17" />
         </state>
       </provider>
     </entry>

@@ -1,4 +1,4 @@
-/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+package com.company;/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
  * Group: 34
  * Homework 4: Group Project
  * Description: Place constructor holds all the information about the Place, id, name,

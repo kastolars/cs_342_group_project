@@ -1,3 +1,5 @@
+package com.company;
+
 import java.util.Scanner;
 
 /* Name: Ayush Patel, Luke Paltzer, Karol Stolarski

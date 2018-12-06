@@ -1,0 +1,100 @@
+
+Game Data File ( GDF ) Format Version 5.1
+
+The following describes the general format of version 5.0 of a game data file. You may create
+higher versions with added features if you wish, but they should be backwards compatible with
+version 5.0. The only change from version 4.0 to version 5.0 is that the Character type and
+PlaceID are now on separate lines. It is recommended that any new versions you create be
+numbered 5.1, 5.2, etc.
+
+GDF 5.0 Environment Name // Magic word, version number and environment name.
+// Comments are ignored, as are blank lines
+
+--------------------------------------- PLACES ---------------------------------------
+
+PLACES nPlaces // Place section keyword, followed by an integer number of places, > 0
+	       // By default the first place listed is the starting point for this 
+	       //  environment. See also below.
+ID long_name_with_spaces // ID is a unique integer, = 2, in the range of a 32-bit signed int
+			 // ID numbers 0 and 1 are reserved
+			 // All ID numbers are non-negative ( see below )
+			 // followed by the name of the Place ( remainder of line except comments )
+ndescr 			 // Number of description lines to follow, an integer > 0
+description 		 // ndescr lines of text describing the Place
+
+--------------------------------------- DIRECTIONS --------------------------------------- 
+
+DIRECTIONS nDirections // Direction section keyword, followed by a number of directions >0
+ID source direction destination lockPattern
+		// ID is a unique integer, = 0, in the range of 32-bit signed ints
+		// source and destination correspond to Place IDs
+		// A negative destination indicates a locked direction. 
+		//  ( Actual destination is positive. )
+		// Destination 1 exits the program
+		// Destination 0 leads nowhere, and implies the direction is locked 
+		//  and must stay locked
+			// ( Provides for future expansion of the environment )
+		// direction indicates the direction from source to destination, and must be one of:
+			// N, S, E, W, U, D, NE, NW, SE, SW,
+			// NNE, NNW, SSE, SSW, ENE, ESE, WNW, WSW
+		// lockPattern is a 32-bit int, = 0, indicating the pattern of the 
+		//  lock on this direction
+			// lockPattern = 0 indicates there is no key that can change this lock status
+
+--------------------------------------- CHARACTERS --------------------------------------- 
+
+CHARACTERS nCharacters 	 // Character section keyword, and # of characters, = 0
+TYPE 			 // For now TYPE must be one of PLAYER or NPC.
+PlaceID 		 // PlaceID = 0
+			 // PlaceID > 0 indicates the starting place for this character
+			 // PlaceID = 0 indicates a random starting place for this character
+ID 	long_name_with_spaces // ID is a unique positive integer, > 0
+			 // Additional fields may be added in later versions of the GDF, as you wish.
+ndescr 			 // Number of description lines to follow, an integer > 0
+description 		 // ndescr lines of text describing the Place
+
+--------------------------------------- ARTIFACTS --------------------------------------- 
+
+ARTIFACTS nArtifacts 	 // Artifacts section keyword, followed by an integer # of artifacts, = 0
+placeOrCharID 		 // Place where this artifact should be put initially.
+			 // < 0 for a characters possessions. ( Character ID is the positive value. )
+			 // = 0 to put the artifact in a random Place
+			 // > 0 to put the artifact in a specified Place
+ID   value   mobility   keyPattern   name
+			 // ID is a unique integer, > 0, in the range of 32-bit signed ints
+			 	// ID >= 100 -- Weapons
+			 	// ID >= 200 -- Potions
+			 	// ID >= 300 -- Magical Items
+			 	// ID >= 400 -- Craftable Items
+			 	// ID >= 500 -- Scrolls
+			 	// ID >= 600 -- Maps
+			 	// ID >= 700 -- Keys
+			 	// ID otherwise is a regular artifact or gem
+			 // value can be used for scoring points, or eventually for bartering 
+			 //  & trade ( integer )
+			 // mobility is < 0 for immovable objects, = 0 for movable objects ( integer )
+			 // keyPattern is a 32-bit int, = 0. This key operates any item 
+			 //  with a matching lockPattern
+			 // keyPattern = 0 opens no locks
+			 // name allows user to refer to this object, and may contain spaces 
+			 //  but not tabs
+			 // Additional fields may be added in later versions of the GDF, as you wish.
+metaData		 // additional information for the artifact (damage, quantity, etc)
+ndescr 			 // Number of description lines to follow
+description 		 // ndescr lines of text describing the Artifact
+
+--------------------------------------- RECIPES ---------------------------------------
+
+RECIPES nRecipes		// Recipe section keyword, followed by an integer # of recipes, = 0
+long_name_with_spaces		// Name of the Recipes with spaces
+ID   quantity   metaData	// ID of the recipe, quantity of material required to craft
+				// meta data -- what the artifact crafted will affect (shield)
+artifact_ID(s)			// can be one or multiple, this artifact is required to be in player
+				//  possession inorder for new artifact to be crafted
+ndescr				// Number of description lines to follow
+description			// ndescr lines of text describing the crafted Artifact
+
+
+
+// Higher versions of the GDF file format may contain additional sections.
+// All sections are required, but CHARACTERS and ARTIFACTS may have zero items.

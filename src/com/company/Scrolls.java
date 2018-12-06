@@ -1,4 +1,4 @@
-package com.company;/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
  * Group: 34
  * Homework 4: Group Project
  * Description: Extends Artifact class to implement learncing that can be used as

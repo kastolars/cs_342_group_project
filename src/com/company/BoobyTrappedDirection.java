@@ -1,15 +1,12 @@
-package com.company;/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
  * Group: 34
  * Homework 4: Group Project
  * Description: This class extends Directions to make a direction boobytrapped and will cause damage
  *              to everyone in that room if a character decides to go in that direction.
  *              This function overrides follow in Direction class to do damage on each person
  *              in the room and then calls follow in that direction.
- */
+ */ 
 
-
-import com.company.Direction;
-import com.company.Place;
 
 public class BoobyTrappedDirection extends Direction {
 

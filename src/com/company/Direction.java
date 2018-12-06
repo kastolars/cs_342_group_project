@@ -1,4 +1,4 @@
-package com.company;/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
  * Group: 34
  * Homework 4: Group Project
  * Description: This class creates all the directions for a room and where they lead
@@ -8,8 +8,6 @@ package com.company;/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
  *                          unlocks the room.
  */ 
 
-
-import com.company.Place;
 
 import static java.lang.Math.abs;
 

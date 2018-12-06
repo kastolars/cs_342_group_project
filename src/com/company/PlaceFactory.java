@@ -1,4 +1,4 @@
-package com.company;/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
  * Group: 34
  * Homework 4: Group Project
  * Description: Factory method to read and initialize all the places present

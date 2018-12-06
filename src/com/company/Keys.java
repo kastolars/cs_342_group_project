@@ -1,4 +1,4 @@
-package com.company;/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
  * Group: 34
  * Homework 4: Group Project
  * Description: Extends Artifact for keys. Primary function is use which overrides
@@ -35,7 +35,7 @@ public class Keys extends Artifact {
 			curr.useKey(this, c);
 
 		} else if (c instanceof Player) {
-			System.out.println("\nThe artifact you are trying to use is not a Key\n");
+			//System.out.println("\nThe artifact you are trying to use is not a Key\n");
 		}
 
     }

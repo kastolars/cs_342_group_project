@@ -1,4 +1,4 @@
-package com.company;/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
  * Group: 34
  * Homework 4: Group Project
  * 
@@ -12,8 +12,6 @@ package com.company;/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
  *      Players = -1
  *      GDF = mysticCity40.gdf
  */
-
-import com.company.Game;
 
 import java.nio.file.FileSystems;
 import java.nio.file.Files;

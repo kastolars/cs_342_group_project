@@ -1,5 +1,3 @@
-package com.company;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -115,6 +113,15 @@ public abstract class Character {
         addCharacter(this);
     }
 
+
+    //Takes in a String to be printed for this Character
+    public void getString(String s) {
+
+        //calls IO.display(s) to print using current IO
+        
+    }
+    
+
     //characters to the static collection of all characters 
     private void addCharacter(Character character){
         // if no duplicate IDs add(this)
@@ -148,6 +155,7 @@ public abstract class Character {
     public boolean equals( int id ){
         return this.ID == id;
     }
+
 
     // group members for printing
     public String toString(){

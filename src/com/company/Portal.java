@@ -1,4 +1,4 @@
-package com.company;/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
  * Group: 34
  * Homework 4: Group Project
  * Description: Extends Direction to allow for instant travel from one place
@@ -6,9 +6,6 @@ package com.company;/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
  *              teleported to Enterance Hall or the first place in the GDF
  *              file.
  */
-
-import com.company.Direction;
-import com.company.Place;
 
 import java.util.HashSet;
 import java.util.Scanner;

@@ -13,13 +13,9 @@
  *      GDF = mysticCity40.gdf
  */
 
+import java.io.*;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
-import java.io.PrintWriter;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -113,6 +109,7 @@ public class GameTester {
         try{
             PrintWriter writer = new PrintWriter(gameName + ".cl", "UTF-8");
             Files.lines(FileSystems.getDefault().getPath(".", gameName))
+//            Files.lines(q)
                     .forEachOrdered(x -> {
                         if(x.contains("//"))
                             writer.append(x.substring(0, 
@@ -121,9 +118,13 @@ public class GameTester {
                             writer.append(x + "\n");
                     });
             writer.close();
+
+            FileInputStream stream = new FileInputStream(new File(gameName));
+            
             return gameName + ".cl";
         } catch (IOException e) {
             System.out.println("\n--WARN-- Could not clean gdf file.\n");
+            e.printStackTrace();
             return gameName;
         }
     }

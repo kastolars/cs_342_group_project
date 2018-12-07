@@ -13,9 +13,8 @@
 
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Collections;
-import java.util.Arrays;
+import java.util.HashMap;
 
 import static java.lang.Math.abs;
 
@@ -57,11 +56,11 @@ public class Place {
 
     //Follow the direction passed in if the direction exist set to new place
     //if not return current place
-    public Place followDirection(String s){
+    public Place followDirection(String s, Character c){
         for (Direction d : directions){
             if (d.match(s)){
                 try {
-                    return d.follow(s);
+                    return d.follow(c, s);
                 } catch (Direction.LockedDirectionException e){
                     return this;
                 }

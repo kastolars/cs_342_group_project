@@ -103,10 +103,10 @@ public class Move {
 				charLoc.removeCharacter(c);
 				Place tempCurr = charLoc;
 
-				if(c instanceof NPC && ( !charLoc.followDirection(arg).isExit() ) ){
-					tempCurr = charLoc.followDirection(arg);
+				if(c instanceof NPC && ( !charLoc.followDirection(arg, c).isExit() ) ){
+					tempCurr = charLoc.followDirection(arg, c);
 				} else {
-					tempCurr = charLoc.followDirection(arg);
+					tempCurr = charLoc.followDirection(arg, c);
 				}
 
 				int id = tempCurr.ID();

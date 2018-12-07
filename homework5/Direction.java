@@ -37,9 +37,9 @@ public class Direction {
     }
 
     //follows the direction and if locked notifies
-    public Place follow(String s) throws LockedDirectionException {
+    public Place follow(Character c, String s) throws LockedDirectionException {
         if (locked) {
-            throw new LockedDirectionException("Door is locked!");
+            throw new LockedDirectionException("Door is locked!", c);
         } else {
             return destination;
         }
@@ -96,8 +96,9 @@ public class Direction {
     }
 
     public class LockedDirectionException extends Throwable {
-        public LockedDirectionException(String s) {
-                System.out.println(s);
+        public LockedDirectionException(String s, Character c) {
+//            System.out.println(s);
+            c.getString(s);
         }
     }
 

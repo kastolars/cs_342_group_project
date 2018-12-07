@@ -1,3 +1,4 @@
+
 //package com.company;
 
 public class IO {
@@ -10,10 +11,15 @@ public class IO {
     private int chosenInterface;
     private UserInterface user;
 
+    private Character player;
+
     private Boolean isTurn = true;
 
-    public IO() {
+    private String inputBuffer;
+
+    public IO(Character c) {
         //chosenInterface = 0;
+        player = c;
         selectInterface(2);
     }
 
@@ -22,10 +28,27 @@ public class IO {
     }
 
 
+    public String getBuffer() {
+        //System.out.println(inputBuffer);
+        //System.out.println(inputBuffer);
+        return this.inputBuffer;
+    }
+
+
     public void display(String s) {
+
+        //System.out.println(s);
         
-        if(chosenInterface > 0 && isTurn) {
+        if(chosenInterface > 0) {
+            
+            /*if(inputBuffer == null) {
+                inputBuffer = s;
+            } else {
+                inputBuffer += s;
+            }*/
+
             user.display(s);
+
         } else if (chosenInterface == 0) {
             user.display(s);
         }
@@ -34,6 +57,7 @@ public class IO {
 
     public String getline() {
         
+        user = new TextInterface();
         return user.getLine();
     
     }
@@ -52,7 +76,7 @@ public class IO {
 
         case 2:
             //select GUI_2
-            user = new GUI_2();
+            user = new GUI_2(this);
             break;
         
         case 3:

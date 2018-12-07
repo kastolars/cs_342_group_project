@@ -55,6 +55,8 @@ public abstract class Character {
 
     public IO interfaceType;
 
+    private String outputBuffer;
+
     private ArrayList< Artifact > items;
     private final static ArrayList<Character> 
                         players = new ArrayList<Character>();
@@ -64,7 +66,7 @@ public abstract class Character {
     public Character( Scanner parser ){
         getColor();
 
-        interfaceType = new IO();
+        //interfaceType = new IO();
 
         items = new ArrayList< Artifact >();
 
@@ -108,7 +110,7 @@ public abstract class Character {
     public Character( int ID, String name, String desc ){
         getColor();
 
-        interfaceType = new IO();
+        //interfaceType = new IO();
 
         this.ID = ID;
         this.name = name;
@@ -120,8 +122,17 @@ public abstract class Character {
     }
 
     
-    public void initIO () {
-        interfaceType = new IO();
+    /*public void initIO () {
+        interfaceType = new IO(0);
+    }*/
+
+    public void setOutputBuffer(String s) {
+        
+        if(outputBuffer == null) {
+            outputBuffer = s;
+        } else {
+            outputBuffer += s;
+        }
     }
 
     //sets visibility of the output for a character
@@ -133,6 +144,7 @@ public abstract class Character {
     //Takes in a String to be printed for this Character
     public void getString(String s) {
 
+        System.out.println(s);
         interfaceType.display(s);
         //calls IO.display(s) to print using current IO
         

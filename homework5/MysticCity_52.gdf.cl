@@ -159,7 +159,7 @@ NPC		0
 1
 The Cheerful Leprechaun sings and dances about his pot o' gold !
 
-PLAYER		0		
+PLAYER		12		
 10		Lost Wanderer   
 3
 This lost wanderer needs help.

@@ -30,7 +30,7 @@ public class MovePane_2 extends JPanel implements ActionListener {
     private JTextField textField;
     private JButton ok;
 
-    private String buffer;
+    private static String buffer;
 
     private TextPane_2 panel;
 
@@ -140,6 +140,7 @@ public class MovePane_2 extends JPanel implements ActionListener {
         
         textField = new JTextField(10);
         ok = new JButton("OK");
+        ok.addActionListener(this);
 
         setLayout(new BorderLayout());
 
@@ -172,6 +173,8 @@ public class MovePane_2 extends JPanel implements ActionListener {
             buffer = "Craft";
         } else if(clicked == ok && buffer.length() > 0) {
             buffer += " " + textField.getText();
+        } else if (clicked == exit) {
+            buffer = "Exit";
         }
 
         buffer += "\n";

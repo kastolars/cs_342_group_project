@@ -1,5 +1,4 @@
 //package com.company;
-
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.FlowLayout;
@@ -15,37 +14,87 @@ public class GUI_2 extends JFrame implements UserInterface {
     private MovePane_2 movePanel;
     private MovePane_2 optionPanel;
     private TextPane_2 textPanel;
+    private Toolbar toolbar;
+
+    private String outBuffer;
 
     private Boolean visibility = true;
+    private IO user;
 
-    public GUI_2 () {
+    public GUI_2 (IO intF) {
+
+        user = intF;
+
+        //new MainFrame_2();
+        setVisibility(true);
+        movePanel = new MovePane_2("Select Move");
+        movePanel.moveButton();
+
+        optionPanel = new MovePane_2("Available Options");
+        optionPanel.optionButton();
+
+        textPanel = new TextPane_2();
+        movePanel.setPanel(textPanel);
+
+        toolbar = new Toolbar();
+
+        toolbar.setGUIPrinter(new PrintOnGUI() {
+            @Override
+            public void print(Boolean canPrint) {
+
+                if(canPrint) {
+                    textPanel.appendText(outBuffer);
+                    System.out.println(outBuffer);
+                    setVisibility(canPrint);
+                }
+            }
+        });
+
+        add(textPanel, BorderLayout.SOUTH);
+        add(movePanel, BorderLayout.WEST);
+        add(optionPanel, BorderLayout.CENTER);
+        add(toolbar, BorderLayout.NORTH);
+
+        printOnGUI();
+
+        setSize(600, 800);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //setVisible(true);
 
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                //new MainFrame_2();
-                movePanel = new MovePane_2("Select Move");
-                movePanel.moveButton();
-                textPanel = new TextPane_2();
-                optionPanel = new MovePane_2("Available Options");
-                optionPanel.optionButton();
-
-                movePanel.setPanel(textPanel);
-        
-                add(textPanel, BorderLayout.SOUTH);
-                add(movePanel, BorderLayout.WEST);
-                add(optionPanel, BorderLayout.CENTER);
-        
-                setSize(600, 800);
-                setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                setVisible(true);
+                
             }
         });
     }
-    
+
+    public void setVisibility(Boolean isVis) {
+        setVisible(isVis);
+    }
+
+    public void printOnGUI() {
+
+        if( toolbar.isChoosen() ) {
+            textPanel.appendText(outBuffer);
+            System.out.println(outBuffer);
+        }
+    }
     
     @Override
     public void display(String p) {
-        textPanel.appendText(p);
+        
+        //System.out.println(p);
+
+        if(outBuffer == null) {
+            outBuffer = p;
+        } else {
+            outBuffer += p;
+        }
+
+        //textPanel.appendText(p);
+        //printOnGUI();
+
+        //System.out.println(outBuffer);
     }
 
     @Override

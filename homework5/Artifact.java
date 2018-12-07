@@ -157,7 +157,7 @@ public class Artifact {
 	public void print( Character c) {
 		//System.out.println("\nName: " + name + "\nDescription: " + description);
 
-		String s = "\nName:" + name + "\nDescription: " + description;
+		String s = "\nName: " + name + "\nDescription: " + description;
 
 		c.getString(s);
 	}

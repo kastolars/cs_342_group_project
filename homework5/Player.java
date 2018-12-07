@@ -20,8 +20,13 @@ import java.util.Scanner;
  */
 
 public class Player extends Character implements DecisionMaker{
+
+    private IO user;
+
     public Player(Scanner s){
         super(s);
+
+        user = new IO(this);
     }
 
     public Player(int i, String s, String d){
@@ -29,6 +34,12 @@ public class Player extends Character implements DecisionMaker{
         health = 100;
         mana = 100;
         lives = 3;
+
+        user = new IO(this);
+    }
+
+    public void getString(String s) {
+        user.display(s);
     }
 
     public Move getMove(){
@@ -37,14 +48,14 @@ public class Player extends Character implements DecisionMaker{
         this.getString("\n" + name() + " -> ");
         //return new Move( KeyboardScanner.getKeyboardScanner().nextLine() );
         
-        String s = interfaceType.getline();
+        String s = user.getline();
         
         return new Move(s);
     }
 
     public void makeMove(){
         //System.out.print(color);
-        this.getString(color);
+        //this.getString(color);
 
         getMove()
             .execute( this, Place.getPlaceById(placeID) );

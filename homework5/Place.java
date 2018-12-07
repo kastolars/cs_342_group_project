@@ -101,10 +101,13 @@ public class Place {
         // System.out.println(name);
         // System.out.println(description);
         // System.out.println("You see:");
-        
-        c.getString(name);
-        c.getString(description);
-        c.getString("You see:");
+
+
+        //CHECK SCANNER IN GETLINE
+        String s = name + "\n\n" + description + "\n" + "You See:\n";
+        //c.getString(name + "\n");
+        //c.getString(description);
+        c.getString(s);
         
         for (Artifact a : artifacts){
             //a.print();

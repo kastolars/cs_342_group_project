@@ -218,7 +218,7 @@ public class Move {
 			
 			default:
 				//System.out.println("\nYou couldn't do anything. Maybe try doing some else...\n");
-				c.getString("\nYou couldn't do anything. Maybe try doing some else...\n");
+				//c.getString("\nYou couldn't do anything. Maybe try doing some else...\n");
 				//this.canRepeat = true;
 		
 		}

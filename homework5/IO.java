@@ -12,7 +12,7 @@ public class IO {
 
     public IO() {
         //chosenInterface = 0;
-        selectInterface(0);
+        selectInterface(2);
     }
 
     public void display(String s) {
@@ -35,15 +35,18 @@ public class IO {
 
         case 1:
             //select GUI_1
+            user = new GUI_1();
             break;
 
 
         case 2:
             //select GUI_2
+            user = new GUI_2();
             break;
         
         case 3:
             //select GUI_3
+            user = new GUI_3();
             break;
 
         default:

@@ -20,7 +20,7 @@ There are doors to the south and the east
 You have found a storeroom full of gold, jewels, and treasure!
 There are doors to the north, south, and east.
 
-22	Pool of Enchantment	
+-22	Pool of Enchantment	
 4
 You are in a round room with a clear enchanting pool of water.
 There are doors to the north and west.
@@ -114,7 +114,7 @@ DIRECTIONS 35
 16	21	E	101	0	
 17	101	NE	102	0	
 18	102	SE	103	0	
-19	103 	SSE	104	0	
+-19	103 	SSE	104	0	
 20	104 	WSW	105	0	
 21	105 	SSW	106	0	
 22	106	S	107	0	

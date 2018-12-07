@@ -119,6 +119,16 @@ public abstract class Character {
         addCharacter(this);
     }
 
+    
+    public void initIO () {
+        interfaceType = new IO();
+    }
+
+    //sets visibility of the output for a character
+    public void setVisibility (Boolean turn) {
+        interfaceType.setVisibility(turn);
+    }
+
 
     //Takes in a String to be printed for this Character
     public void getString(String s) {

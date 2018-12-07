@@ -275,6 +275,16 @@ public class Game {
 
         System.out.println("  WELCOME TO " + name + "\n");
 
+        try {
+            Character.knownCharacters().forEach(x -> {
+                if(x instanceof NPC) {
+                    x.setVisibility(false);
+                }
+            });
+        }
+
+        catch (Exception e) {} //ignore
+
         try{
             while( true ){
                 Character.knownCharacters().forEach(

@@ -10,14 +10,25 @@ public class IO {
     private int chosenInterface;
     private UserInterface user;
 
+    private Boolean isTurn = true;
+
     public IO() {
         //chosenInterface = 0;
         selectInterface(2);
     }
 
+    public void setVisibility (Boolean turn) {
+        isTurn = turn;
+    }
+
+
     public void display(String s) {
         
-        user.display(s);
+        if(chosenInterface > 0 && isTurn) {
+            user.display(s);
+        } else if (chosenInterface == 0) {
+            user.display(s);
+        }
 
     }
 

@@ -7,9 +7,6 @@
  *              file.
  */
 
-import java.util.HashSet;
-import java.util.Scanner;
-
 public class Portal extends Direction {
     // private static HashSet<Direction> portals = new HashSet<Direction>();
     private boolean activated;
@@ -22,11 +19,12 @@ public class Portal extends Direction {
     }
 
     @Override
-    public Place follow(String s) throws LockedDirectionException {
+    public Place follow(Character c, String s) throws LockedDirectionException {
         if (activated){
-            super.follow(s);
+            super.follow(c, s);
         }
-        System.out.println("\nThere and back again\n");
+//        System.out.println("\nThere and back again\n");
+        c.getString("\nThere and back again\n");
         //c.getString("\nThere and back again\n");
         return Place.getStart();
 //        Scanner sc = KeyboardScanner.getKeyBoardScanner();

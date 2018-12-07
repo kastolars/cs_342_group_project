@@ -10,6 +10,8 @@ public class TextInterface implements UserInterface {
     //@Override
     public void display (String s) {
 
+        System.out.println(s);
+        
     }
 
     //@Override

@@ -53,7 +53,7 @@ public abstract class Character {
     private String name;
     private String description;
 
-    private IO interfaceType;
+    public IO interfaceType;
 
     private ArrayList< Artifact > items;
     private final static ArrayList<Character> 

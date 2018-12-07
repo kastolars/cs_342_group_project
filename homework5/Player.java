@@ -35,7 +35,11 @@ public class Player extends Character implements DecisionMaker{
         getCurrentPlace().display(this);
         //System.out.print("\n" + name() + " -> ");
         this.getString("\n" + name() + " -> ");
-        return new Move( KeyboardScanner.getKeyboardScanner().nextLine() );
+        //return new Move( KeyboardScanner.getKeyboardScanner().nextLine() );
+        
+        String s = interfaceType.getline();
+        
+        return new Move(s);
     }
 
     public void makeMove(){

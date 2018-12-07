@@ -11,14 +11,16 @@ public class TextInterface implements UserInterface {
     public void display (String s) {
 
         System.out.println(s);
-        
+
     }
 
     //@Override
     public String getLine() {
 
-
-        return null;
+        String s =  KeyboardScanner.getKeyboardScanner().nextLine();
+        System.out.println("Scanned in: " + s);
+        return s;
+        
     }
 
 

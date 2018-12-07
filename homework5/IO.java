@@ -21,7 +21,11 @@ public class IO {
 
     }
 
-    public String getline(String s){return "";}
+    public String getline() {
+        
+        return user.getLine();
+    
+    }
 
     
     public void selectInterface(int i){

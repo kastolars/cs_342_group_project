@@ -57,8 +57,15 @@ public class Place {
     //Follow the direction passed in if the direction exist set to new place
     //if not return current place
     public Place followDirection(String s, Character c){
+        
+        //System.out.println("Place -> Direction: " + s + "\n");"
+        //System.out.println("Place: " + c.name());
+        
         for (Direction d : directions){
+            //System.out.println("Checking Direction - " + d.type());
+            //System.out.println("Place: " + d.match(s));
             if (d.match(s)){
+                System.out.println("Place: Direction Found");
                 try {
                     return d.follow(c, s);
                 } catch (Direction.LockedDirectionException e){
@@ -104,7 +111,7 @@ public class Place {
 
 
         //CHECK SCANNER IN GETLINE
-        String s = name + "\n\n" + description + "\n" + "You See:\n";
+        String s = "\n" + name + "\n\n" + description + "\n" + "You See:\n";
         //c.getString(name + "\n");
         //c.getString(description);
         c.getString(s);

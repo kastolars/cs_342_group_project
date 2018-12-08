@@ -18,14 +18,14 @@ public class TextInterface implements UserInterface {
     public String getLine() {
 
         String s =  KeyboardScanner.getKeyboardScanner().nextLine();
-        System.out.println("Scanned in: " + s);
+        //System.out.println("Scanned in: " + s);
         return s;
         
     }
 
     @Override
     public void frameUpdate(Boolean b) {
-        System.out.println("I am Here");
+        //System.out.println("I am Here");
     }
 
 

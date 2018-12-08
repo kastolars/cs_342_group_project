@@ -38,9 +38,13 @@ public class Direction {
 
     //follows the direction and if locked notifies
     public Place follow(Character c, String s) throws LockedDirectionException {
+        
+        System.out.println("Direction: " + locked);
+        
         if (locked) {
             throw new LockedDirectionException("Door is locked!", c);
         } else {
+            System.out.println("Destination: " + destination.name());
             return destination;
         }
     }
@@ -91,7 +95,14 @@ public class Direction {
         }
 
         protected boolean match(String s){
-            return s.matches("(?i)" + text + "|" + abbreviation);
+            //System.out.println(s);
+            //System.out.println(text);
+
+            if(s.matches(text) || s.matches(abbreviation)) {
+                return true;
+            }
+            //return s.matches("(?i)" + text + "|" + abbreviation);
+            return false;
         }
     }
 
@@ -103,6 +114,6 @@ public class Direction {
     }
 
     public String type(){
-        return this.dir.abbreviation;
+        return this.dir.text;
     }
 }

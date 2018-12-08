@@ -150,13 +150,14 @@ public class MovePane_2 extends JPanel implements ActionListener {
 
         //gc.weightx = 1;
         //gc.weighty = 0.1;
+        
         gc.gridx = 250;
-        gc.gridy = 150;
+        gc.gridy = 75;
         add(textField, gc);
 
 
         gc.gridx = 250;
-        gc.gridy = 200;
+        gc.gridy = 100;
         add(ok, gc);
 
 
@@ -170,24 +171,20 @@ public class MovePane_2 extends JPanel implements ActionListener {
                 textField.setText("");
                 textField.setEditable(false);
 
-                buffer += "\n";
+                //buffer += "\n";
                 panel.appendText(buffer);
-                System.out.println("R: " + buffer + " " + isReady );
+                //System.out.println("R: " + buffer + " " + isReady );
                 //notify();
 
                 isReady = true;
 
             }
         }) ;
-
+        
 
         //ok.addActionListener(this);
-
-
         //setLayout(new BorderLayout());
-
         //textField.setText("HERE");
-
         //add(textField, BorderLayout.CENTER);
         //add(ok, BorderLayout.SOUTH);
 
@@ -207,7 +204,7 @@ public class MovePane_2 extends JPanel implements ActionListener {
     }
 
     public String getLine() {
-        System.out.println("Buf: " + buffer);
+        //System.out.println("Buf: " + buffer);
         return buffer;
     }
 
@@ -227,6 +224,7 @@ public class MovePane_2 extends JPanel implements ActionListener {
             textField.setEditable(true);
         } else if (clicked == look) {
             buffer = "Look";
+            textField.setEditable(false);
         } else if (clicked == get) {
             buffer = "Get";
             textField.setEditable(true);
@@ -238,6 +236,7 @@ public class MovePane_2 extends JPanel implements ActionListener {
             textField.setEditable(true);
         } else if (clicked == inve) {
             buffer = "Inventory";
+            textField.setEditable(false);
         } else if (clicked == craft) {
             buffer = "Craft";
             textField.setEditable(true);

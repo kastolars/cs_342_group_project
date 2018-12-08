@@ -21,12 +21,11 @@ public class IO {
     private String inputBuffer;
 
     public IO(Character c) {
-        //chosenInterface = 0;
+
         player = c;
         isTurn = false;
-        //System.out.println("IN IO 1");
-        selectInterface(1);
-        //System.out.println(isTurn);
+        selectInterface(2);
+
     }
 
     public void setVisibility (Boolean turn) {
@@ -52,6 +51,8 @@ public class IO {
 
         //System.out.println(s);
         
+        //System.out.println("Choosen: " + chosenInterface);
+
         if(chosenInterface > 0) {
             
             /*if(inputBuffer == null) {
@@ -59,7 +60,6 @@ public class IO {
             } else {
                 inputBuffer += s;
             }*/
-
             user.display(s);
 
         } else if (chosenInterface == 0) {
@@ -72,7 +72,7 @@ public class IO {
         
         //user = new TextInterface();
 
-        System.out.println(user.getLine());
+        //System.out.println(user.getLine());
         return user.getLine();
     
     }

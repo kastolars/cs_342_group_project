@@ -39,24 +39,26 @@ public class Player extends Character implements DecisionMaker{
     }
 
     public void getString(String s) {
+        //System.out.println(s);
         user.display(s);
     }
 
-    public Move getMove(){
+    public Move getMove() {
+
         getCurrentPlace().display(this);
         //System.out.print("\n" + name() + " -> ");
-        this.getString("\n" + name() + " -> ");
+        getString("\n" + name() + " -> ");
         //return new Move( KeyboardScanner.getKeyboardScanner().nextLine() );
         
         String s = user.getline();
-        System.out.println ("Player: " + s);
+        //System.out.println ("Player: " + s);
         
         return new Move(s);
     }
 
     public void makeMove(){
         //System.out.print(color);
-        //this.getString(color);
+        this.getString(color);
 
         toggleGUI(true);
         getMove()
@@ -64,7 +66,7 @@ public class Player extends Character implements DecisionMaker{
         //System.out.print(CColor.RESET);
         this.getString(CColor.RESET);
 
-        System.out.println(Place.getPlaceById(placeID).name());
+        //System.out.println(Place.getPlaceById(placeID).name());
 
         toggleGUI(false);
     }
@@ -83,7 +85,7 @@ public class Player extends Character implements DecisionMaker{
     @Override
     public void toggleGUI(Boolean tog){
 
-        System.out.println("Attempting Toggle..." + tog);
+        //System.out.println("Attempting Toggle..." + tog);
         user.setVisibility(tog);
     }
 

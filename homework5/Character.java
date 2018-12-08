@@ -144,7 +144,7 @@ public abstract class Character {
     //Takes in a String to be printed for this Character
     public void getString(String s) {
 
-        System.out.println(s);
+        //System.out.println(s);
         interfaceType.display(s);
         //calls IO.display(s) to print using current IO
         
@@ -196,6 +196,8 @@ public abstract class Character {
 
     //adds artifacts to the collection of artifacts with the character
     public void addArtifact( Artifact item ){
+
+        System.out.println("Character - " + item.name() );
         if( item == null ) return;
         System.out.printf("-+ Item [%s] Aquired +-\n", item.name() );
         items.add( item );

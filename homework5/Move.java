@@ -95,13 +95,13 @@ public class Move {
 		MoveType mv = getType();
 		String arg = args();
 
-        //System.out.println(mv + " " + arg);
+        //System.out.println("Move " + mv + " Arg: " + arg);
 
 		switch(mv) {
 
 			case GO:
 				
-				System.out.println("Go was Called");
+				//System.out.println("Go was Called");
 				charLoc.removeCharacter(c);
 				Place tempCurr = charLoc;
 
@@ -111,6 +111,8 @@ public class Move {
 					tempCurr = charLoc.followDirection(arg, c);
 				}
 
+				//System.out.println(tempCurr.name());
+
 				int id = tempCurr.ID();
 				c.moveToPlace(id);
 
@@ -118,7 +120,7 @@ public class Move {
 					//this case only happens when user input direction does not exist in this room
 					//System.out.println("\nThere was either no Room in that direction or\n"
 					//					+ "You entered wrong input check and Try Again.\n");
-
+					
 					c.getString("\nThere was either no Room in that direction or\n"
 									+ "You entered wrong input check and Try Again.\n");
 

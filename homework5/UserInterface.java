@@ -6,4 +6,6 @@ public interface UserInterface {
 
     public String getLine( ) ;
 
+    public void frameUpdate(Boolean b) ;
+
 }

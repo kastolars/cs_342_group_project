@@ -2,6 +2,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.BorderLayout;
@@ -11,6 +12,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.border.Border;
 
 public class MovePane_2 extends JPanel implements ActionListener {
@@ -25,6 +27,8 @@ public class MovePane_2 extends JPanel implements ActionListener {
     private JButton exit;
     private JButton look;
 
+    private JComboBox downs;
+
 
     //OPTION MENU TEXTBOX
     private JTextField textField;
@@ -37,12 +41,15 @@ public class MovePane_2 extends JPanel implements ActionListener {
     public MovePane_2 (String name) {
 
         Dimension dim = getPreferredSize();
-        dim.width = 300;
-        dim.height = 250;
-        setPreferredSize(dim);
+        //dim.width = 300;
+        //dim.height = 250;
+        //setPreferredSize(dim);
+
+        textField = new JTextField(10);
+        ok = new JButton("OK");
 
         Border innerBorder = (BorderFactory.createTitledBorder(name));
-        Border outterBorder = (BorderFactory.createEmptyBorder(5,5,5,5));
+        Border outterBorder = (BorderFactory.createEmptyBorder());
         setBorder(BorderFactory.createCompoundBorder(outterBorder, innerBorder));
 
     }
@@ -134,18 +141,55 @@ public class MovePane_2 extends JPanel implements ActionListener {
         gc.anchor = GridBagConstraints.LINE_START;
         add(exit, gc);
 
+
+        //gc.weightx = 1;
+        //gc.weighty = 0.1;
+        gc.gridx = 250;
+        gc.gridy = 150;
+        add(textField, gc);
+
+
+        gc.gridx = 250;
+        gc.gridy = 200;
+        add(ok, gc);
+
+
+        //downs = new JComboBox();
+        ok.addActionListener( new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //buffer += ((JButton)e.getSource()).getName();
+                buffer += " " + textField.getText();
+                textField.setText("");
+                textField.setEditable(false);
+
+                buffer += "\n";
+                panel.appendText(buffer);
+                System.out.println("R: " + buffer);
+                notify();
+            }
+        }) ;
+
+        //ok.addActionListener(this);
+
+
+        //setLayout(new BorderLayout());
+
+        //textField.setText("HERE");
+
+        //add(textField, BorderLayout.CENTER);
+        //add(ok, BorderLayout.SOUTH);
+
+        textField.setEditable(false);
+
+
+
+
     }
 
-    public void optionButton() {
-        
-        textField = new JTextField(10);
-        ok = new JButton("OK");
-        ok.addActionListener(this);
-
-        setLayout(new BorderLayout());
-
-        add(textField, BorderLayout.CENTER);
-        add(ok, BorderLayout.SOUTH);
+    public String getLine() {
+        return buffer;
     }
 
 
@@ -157,28 +201,37 @@ public class MovePane_2 extends JPanel implements ActionListener {
     public void actionPerformed (ActionEvent e) {
         JButton clicked = (JButton)e.getSource();
 
+        //System.out.println(textField);
+        buffer = "";
         if(clicked == go) {
             buffer = "Go";
+            textField.setEditable(true);
         } else if (clicked == look) {
             buffer = "Look";
         } else if (clicked == get) {
             buffer = "Get";
+            textField.setEditable(true);
         } else if (clicked == drop) {
             buffer = "Drop";
+            textField.setEditable(true);
         } else if (clicked == use) {
             buffer = "Use";
+            textField.setEditable(true);
         } else if (clicked == inve) {
             buffer = "Inventory";
         } else if (clicked == craft) {
             buffer = "Craft";
-        } else if(clicked == ok && buffer.length() > 0) {
-            buffer += " " + textField.getText();
+            textField.setEditable(true);
+        /*} else if(clicked == ok && buffer.length() > 0) {
+            buffer += " " + textField.getText();*/
         } else if (clicked == exit) {
             buffer = "Exit";
+            textField.setEditable(true);
         }
 
-        buffer += "\n";
-        panel.appendText(buffer);
+        //buffer += "\n";
+        System.out.println("L: " + buffer);
+        //panel.appendText(buffer);
     }
 
 

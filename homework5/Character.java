@@ -121,10 +121,10 @@ public abstract class Character {
         addCharacter(this);
     }
 
-    
-    /*public void initIO () {
-        interfaceType = new IO(0);
-    }*/
+    //toggles the GUI
+    public void toggleGUI(Boolean tog){
+        //user.setVisibility(tog);
+    }
 
     public void setOutputBuffer(String s) {
         
@@ -321,6 +321,8 @@ public abstract class Character {
 
         else if( name.toLowerCase().contains("leprechaun") ){
             new Leprechaun(placeID, name, description);
+        } else {
+            new NPC(parser);
         }
 
         // placeID, name, description

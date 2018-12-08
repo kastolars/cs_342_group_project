@@ -10,4 +10,10 @@ public class GUI_3 implements UserInterface {
     public String getLine() {
         return null;
     }
+
+
+    @Override
+    public void frameUpdate(Boolean b) {
+        
+    }
 }

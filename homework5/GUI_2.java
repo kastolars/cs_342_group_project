@@ -2,6 +2,7 @@
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.FlowLayout;
+import java.awt.Frame;
 import java.awt.GridBagConstraints;
 import java.awt.GridLayout;
 import java.awt.GridBagLayout;
@@ -18,20 +19,23 @@ public class GUI_2 extends JFrame implements UserInterface {
 
     private String outBuffer;
 
-    private Boolean visibility = true;
+    private Boolean visibility = false;
     private IO user;
 
     public GUI_2 (IO intF) {
 
+        System.out.println("Broke Here");
+
+        //visibility = user.visibility();
+
         user = intF;
 
         //new MainFrame_2();
-        setVisibility(true);
         movePanel = new MovePane_2("Select Move");
         movePanel.moveButton();
 
-        optionPanel = new MovePane_2("Available Options");
-        optionPanel.optionButton();
+        //optionPanel = new MovePane_2("Available Options");
+        //optionPanel.optionButton();
 
         textPanel = new TextPane_2();
         movePanel.setPanel(textPanel);
@@ -50,15 +54,21 @@ public class GUI_2 extends JFrame implements UserInterface {
             }
         });
 
+        System.out.println("Broke Here");
+
         add(textPanel, BorderLayout.SOUTH);
-        add(movePanel, BorderLayout.WEST);
-        add(optionPanel, BorderLayout.CENTER);
+        add(movePanel, BorderLayout.CENTER);
+        //add(optionPanel, BorderLayout.CENTER);
         add(toolbar, BorderLayout.NORTH);
 
         printOnGUI();
 
+        System.out.println("Broke Here");
+
         setSize(600, 800);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //System.out.println( " set V " + user.visibility());
+        this.setVisible(user.visibility());
         //setVisible(true);
 
         SwingUtilities.invokeLater(new Runnable() {
@@ -66,6 +76,32 @@ public class GUI_2 extends JFrame implements UserInterface {
                 
             }
         });
+    }
+
+    @Override
+    public void frameUpdate(Boolean turn) {
+
+        //System.out.println("Updated " + turn);
+        //repaint();
+
+        setVisible(turn);
+        
+        /*if(turn) {
+            //setState(Frame.NORMAL);
+            setVisible(true);
+        } else {
+            //setState(Frame.ICONIFIED);
+            setVisible(false);
+        }*/
+
+        //textPanel.repaint();
+        //textPanel.revalidate();
+        textPanel.flush();
+        outBuffer = "";
+        //revalidate();
+        
+        
+
     }
 
     public void setVisibility(Boolean isVis) {
@@ -99,7 +135,8 @@ public class GUI_2 extends JFrame implements UserInterface {
 
     @Override
     public String getLine() {
-        return "";
+        movePanel.wait();
+        return movePanel.getLine();
     }
 }
 

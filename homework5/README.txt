@@ -5,17 +5,6 @@ Luke Paltzer
 Karol Stolarski
 Ayush Patel
 
-Final Release Version
-
-In the final release version of the game, we have implemented Graphical
-User Interfaces! Now players will have the ability to choose in what manner
-they will interact with the game. There is the classic text interface from
-all the previous versions as well as three graphical user interfaces. The
-three graphical interfaces each offer a different layout and method of playing
-the game, but the underlying functionality is virtually the same. There is also
-the ability to switch between each GUI during the game, so players are not
-stuck with one simply one type the entire time.
-
 Version 5.0:
 
 In this version, several new features have been implemented.

@@ -23,6 +23,11 @@ public class TextInterface implements UserInterface {
         
     }
 
+    @Override
+    public void frameUpdate(Boolean b) {
+        System.out.println("I am Here");
+    }
+
 
 
 }

@@ -275,22 +275,18 @@ public class Game {
 
         System.out.println("  WELCOME TO " + name + "\n");
 
-        try {
-            Character.knownCharacters().forEach(x -> {
-                if(x instanceof NPC) {
-                    x.setVisibility(false);
-                }
-            });
-        }
-
-        catch (Exception e) {} //ignore
 
         try{
             while( true ){
                 Character.knownCharacters().forEach(
                     x -> {
-                        if( !x.equals(0) )
+                        if( !x.equals(0) ) {
+                            //x.toggleGUI(true);
                             x.makeMove();
+                            //System.out.println("Moved");
+                            //x.toggleGUI(false);
+                        }
+
                     }
                 );
             }

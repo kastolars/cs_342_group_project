@@ -1,4 +1,7 @@
 
+import java.awt.Frame;
+
+import javax.swing.*;
 //package com.company;
 
 public class IO {
@@ -13,18 +16,28 @@ public class IO {
 
     private Character player;
 
-    private Boolean isTurn = true;
+    private Boolean isTurn;
 
     private String inputBuffer;
 
     public IO(Character c) {
         //chosenInterface = 0;
         player = c;
+        isTurn = false;
+        //System.out.println("IN IO 1");
         selectInterface(2);
+        //System.out.println(isTurn);
     }
 
     public void setVisibility (Boolean turn) {
         isTurn = turn;
+        user.frameUpdate(turn);
+        System.out.println("IO Update " + turn);
+    }
+
+    public Boolean visibility() {
+        System.out.println("In IO");
+        return isTurn;
     }
 
 
@@ -57,13 +70,16 @@ public class IO {
 
     public String getline() {
         
-        user = new TextInterface();
+        //user = new TextInterface();
         return user.getLine();
+
+
     
     }
 
     
     public void selectInterface(int i){
+        
         chosenInterface = i;
 
         switch (chosenInterface) {
@@ -76,7 +92,9 @@ public class IO {
 
         case 2:
             //select GUI_2
+            System.out.println("Broke Here1");
             user = new GUI_2(this);
+            System.out.println("Broke Here2");
             break;
         
         case 3:

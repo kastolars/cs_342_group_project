@@ -57,11 +57,13 @@ public class Player extends Character implements DecisionMaker{
         //System.out.print(color);
         //this.getString(color);
 
+        toggleGUI(true);
         getMove()
             .execute( this, Place.getPlaceById(placeID) );
-
         //System.out.print(CColor.RESET);
         this.getString(CColor.RESET);
+
+        toggleGUI(false);
     }
 
     protected void lifeCheck(){
@@ -73,6 +75,13 @@ public class Player extends Character implements DecisionMaker{
     public void cast(String spell, Place p){
         //System.out.println("  ... nothing happened ... ");
         this.getString(" ... nothing happened ... ");
+    }
+
+    @Override
+    public void toggleGUI(Boolean tog){
+
+        System.out.println("Attempting Toggle..." + tog);
+        user.setVisibility(tog);
     }
 
 }

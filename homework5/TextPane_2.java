@@ -24,4 +24,8 @@ public class TextPane_2 extends JPanel {
     public void appendText(String text) {
         textArea.append(text);
     }
+
+    public void flush() {
+        textArea.setText("");
+    }
 }

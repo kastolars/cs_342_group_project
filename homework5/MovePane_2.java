@@ -39,7 +39,7 @@ public class MovePane_2 extends JPanel implements ActionListener {
     private JTextField textField;
     private JButton ok;
 
-    private static String buffer;
+    private static String buffer = "";
 
     private TextPane_2 panel;
 
@@ -196,7 +196,7 @@ public class MovePane_2 extends JPanel implements ActionListener {
     }
 
     public Boolean pieceOfShit() {
-        System.out.println("called..");
+        //System.out.println("called..");
         //int i = 1;
         //i++;
         return isReady;

@@ -25,18 +25,18 @@ public class IO {
         player = c;
         isTurn = false;
         //System.out.println("IN IO 1");
-        selectInterface(2);
+        selectInterface(1);
         //System.out.println(isTurn);
     }
 
     public void setVisibility (Boolean turn) {
         isTurn = turn;
         user.frameUpdate(turn);
-        System.out.println("IO Update " + turn);
+        //System.out.println("IO Update " + turn);
     }
 
     public Boolean visibility() {
-        System.out.println("In IO");
+        //System.out.println("In IO");
         return isTurn;
     }
 
@@ -71,9 +71,9 @@ public class IO {
     public String getline() {
         
         //user = new TextInterface();
+
+        System.out.println(user.getLine());
         return user.getLine();
-
-
     
     }
 
@@ -86,7 +86,7 @@ public class IO {
 
         case 1:
             //select GUI_1
-            user = new GUI_1();
+            user = new GUI_1(this);
             break;
 
 

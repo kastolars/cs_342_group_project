@@ -100,6 +100,8 @@ public class Move {
 		switch(mv) {
 
 			case GO:
+				
+				System.out.println("Go was Called");
 				charLoc.removeCharacter(c);
 				Place tempCurr = charLoc;
 

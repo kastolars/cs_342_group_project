@@ -49,6 +49,7 @@ public class Player extends Character implements DecisionMaker{
         //return new Move( KeyboardScanner.getKeyboardScanner().nextLine() );
         
         String s = user.getline();
+        System.out.println ("Player: " + s);
         
         return new Move(s);
     }
@@ -62,6 +63,8 @@ public class Player extends Character implements DecisionMaker{
             .execute( this, Place.getPlaceById(placeID) );
         //System.out.print(CColor.RESET);
         this.getString(CColor.RESET);
+
+        System.out.println(Place.getPlaceById(placeID).name());
 
         toggleGUI(false);
     }

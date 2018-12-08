@@ -58,7 +58,7 @@ public class GUI_2 extends JFrame implements UserInterface {
             }
         });
 
-        System.out.println("Broke Here");
+        //System.out.println("Broke Here");
 
         add(textPanel, BorderLayout.SOUTH);
         add(movePanel, BorderLayout.CENTER);
@@ -67,7 +67,7 @@ public class GUI_2 extends JFrame implements UserInterface {
 
         printOnGUI();
 
-        System.out.println("Broke Here");
+        //System.out.println("Broke Here");
 
         setSize(600, 800);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -131,10 +131,6 @@ public class GUI_2 extends JFrame implements UserInterface {
             outBuffer += p;
         }
 
-        //textPanel.appendText(p);
-        //printOnGUI();
-
-        //System.out.println(outBuffer);
     }
 
     @Override
@@ -142,6 +138,13 @@ public class GUI_2 extends JFrame implements UserInterface {
         System.out.println("I was called");
 
         while( !movePanel.pieceOfShit() ) {
+            
+            try {
+                Thread.sleep(250);
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
 
         }
         movePanel.pieceOfShit2();

@@ -5,6 +5,10 @@ import java.awt.FlowLayout;
 import java.awt.Frame;
 import java.awt.GridBagConstraints;
 import java.awt.GridLayout;
+import java.awt.event.HierarchyEvent;
+import java.awt.event.HierarchyListener;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.awt.GridBagLayout;
 
 import javax.swing.*;
@@ -135,8 +139,16 @@ public class GUI_2 extends JFrame implements UserInterface {
 
     @Override
     public String getLine() {
-        movePanel.wait();
+        System.out.println("I was called");
+
+        while( !movePanel.pieceOfShit() ) {
+
+        }
+        movePanel.pieceOfShit2();
+
+        System.out.println("End loop");
         return movePanel.getLine();
+        //return KeyboardScanner.getKeyboardScanner().nextLine();
     }
 }
 

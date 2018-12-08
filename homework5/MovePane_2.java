@@ -1,4 +1,5 @@
 import java.awt.Dimension;
+import java.awt.Event;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -6,7 +7,9 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.BorderLayout;
+import java.awt.Component;
 
+import javax.swing.AbstractAction;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
@@ -29,6 +32,8 @@ public class MovePane_2 extends JPanel implements ActionListener {
 
     private JComboBox downs;
 
+    private Boolean isReady;
+
 
     //OPTION MENU TEXTBOX
     private JTextField textField;
@@ -41,6 +46,7 @@ public class MovePane_2 extends JPanel implements ActionListener {
     public MovePane_2 (String name) {
 
         Dimension dim = getPreferredSize();
+        isReady = false;
         //dim.width = 300;
         //dim.height = 250;
         //setPreferredSize(dim);
@@ -166,10 +172,14 @@ public class MovePane_2 extends JPanel implements ActionListener {
 
                 buffer += "\n";
                 panel.appendText(buffer);
-                System.out.println("R: " + buffer);
-                notify();
+                System.out.println("R: " + buffer + " " + isReady );
+                //notify();
+
+                isReady = true;
+
             }
         }) ;
+
 
         //ok.addActionListener(this);
 
@@ -183,12 +193,21 @@ public class MovePane_2 extends JPanel implements ActionListener {
 
         textField.setEditable(false);
 
+    }
 
+    public Boolean pieceOfShit() {
+        System.out.println("called..");
+        //int i = 1;
+        //i++;
+        return isReady;
+    }
 
-
+    public void pieceOfShit2() {
+        isReady = false;
     }
 
     public String getLine() {
+        System.out.println("Buf: " + buffer);
         return buffer;
     }
 
@@ -230,7 +249,7 @@ public class MovePane_2 extends JPanel implements ActionListener {
         }
 
         //buffer += "\n";
-        System.out.println("L: " + buffer);
+        //System.out.println("L: " + buffer);
         //panel.appendText(buffer);
     }
 

@@ -9,12 +9,19 @@ public class BottomToolbar extends JPanel implements ActionListener {
     private JButton displayButton;
     private JButton inventoryButton;
     private JButton quitButton;
+    private JTextField textField;
+
+    private String commandBuffer;
+    private Boolean isReady;
 
     String s;
 
     private TextPanel textPanel;
 
     public BottomToolbar() {
+
+        commandBuffer = "";
+        isReady = false;
 
         lookButton = new JButton("Look");
         displayButton = new JButton("Display");
@@ -42,6 +49,8 @@ public class BottomToolbar extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         JButton clicked = (JButton) e.getSource();
 
+        //System.out.println("Button Clicked");
+
         if (clicked == lookButton){
             setBuffer("LOOK");
         } else if (clicked == displayButton) {
@@ -53,8 +62,25 @@ public class BottomToolbar extends JPanel implements ActionListener {
         }
     }
 
+    public Boolean getReady() {
+
+        return isReady;
+    }
+
+    public void setReady() {
+        isReady = false;
+    }
+
+    public String getLine() {
+        return commandBuffer;
+    }
+
     private void setBuffer(String t){
+        //System.out.println("SetBuffer Callled");
         s = t;
+        commandBuffer = s;
         textPanel.appendText(t + "\n");
+        isReady = true;
+        //textField.setText("");
     }
 }

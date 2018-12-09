@@ -1,8 +1,14 @@
+/* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
+ * Group: 34
+ * Homework 5: Group Project -- GUI
+ * Description: Input/Output selector, will randomly assign an IO to the
+ *              Character.
+ */ 
+
 
 import java.awt.Frame;
-
 import javax.swing.*;
-//package com.company;
+import java.util.Random;
 
 public class IO {
 
@@ -14,65 +20,45 @@ public class IO {
     private int chosenInterface;
     private UserInterface user;
 
-    private Character player;
-
     private Boolean isTurn;
 
     private String inputBuffer;
 
-    public IO(Character c) {
+    public IO() {
 
-        player = c;
+        Random rand = new Random();
+
+        chosenInterface =  rand.nextInt(3);
         isTurn = false;
-        selectInterface(2);
+        System.out.println(chosenInterface);
+        selectInterface(chosenInterface);
 
     }
 
     public void setVisibility (Boolean turn) {
         isTurn = turn;
         user.frameUpdate(turn);
-        //System.out.println("IO Update " + turn);
     }
 
     public Boolean visibility() {
-        //System.out.println("In IO");
         return isTurn;
     }
 
 
     public String getBuffer() {
-        //System.out.println(inputBuffer);
-        //System.out.println(inputBuffer);
+
         return this.inputBuffer;
     }
 
 
     public void display(String s) {
 
-        //System.out.println(s);
-        
-        //System.out.println("Choosen: " + chosenInterface);
-
-        if(chosenInterface > 0) {
-            
-            /*if(inputBuffer == null) {
-                inputBuffer = s;
-            } else {
-                inputBuffer += s;
-            }*/
-            user.display(s);
-
-        } else if (chosenInterface == 0) {
-            user.display(s);
-        }
+        user.display(s);
 
     }
 
     public String getline() {
         
-        //user = new TextInterface();
-
-        //System.out.println(user.getLine());
         return user.getLine();
     
     }
@@ -92,9 +78,7 @@ public class IO {
 
         case 2:
             //select GUI_2
-            System.out.println("Broke Here1");
             user = new GUI_2(this);
-            System.out.println("Broke Here2");
             break;
         
         case 3:

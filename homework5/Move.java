@@ -1,6 +1,6 @@
 /* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
  * Group: 34
- * Homework 4: Group Project
+ * Homework 5: Group Project
  * Description: Move class -- Holds the MoveType Enum that has a list of moves either a player
  *  			 or a NPC can make. The Enum has type() method which takes in a string and returns
  *  			 MoveType that it matches. Move constructor takes in a string and generates a Move
@@ -95,13 +95,10 @@ public class Move {
 		MoveType mv = getType();
 		String arg = args();
 
-        //System.out.println("Move " + mv + " Arg: " + arg);
-
 		switch(mv) {
 
 			case GO:
 				
-				//System.out.println("Go was Called");
 				charLoc.removeCharacter(c);
 				Place tempCurr = charLoc;
 
@@ -126,6 +123,7 @@ public class Move {
 
 				} else {
 					charLoc = tempCurr;
+					c.getString("\nYou are now in " + charLoc.name() + "\n");
 				}
 
 				charLoc.addCharacter(c);
@@ -141,9 +139,10 @@ public class Move {
 
 			case GET:
 
-				if(charLoc.hasArtifact( arg ))
-                    c.addArtifact( charLoc.popItem( arg ) );
-
+				if(charLoc.hasArtifact( arg )) {
+					c.addArtifact( charLoc.popItem( arg ) );
+					c.getString("\n-+ Item [" + arg + "] Aquired +-\n");
+				}
 				//canRepeat = false;
 				break;
 			
@@ -177,8 +176,15 @@ public class Move {
 			case INVE: case INVENTORY:
 
 				//this.canRepeat = true;
-
 				c.printItems();
+
+				try {
+					Thread.sleep(1500);
+				} catch (Exception e) {
+					//TODO: handle exception
+					e.printStackTrace();
+				}
+
 				break;
 
 			case CRAFT:
@@ -189,14 +195,13 @@ public class Move {
 					Recipe r = Recipe.getRecipe(index);
 					Artifact aa = r.MakeArtifact(c);
 
-					//System.out.println(aa.name());
-					c.getString(aa.name());
-
 					//a.print();
 					if(aa != null) {
 						//System.out.println("\n\t~ " + aa.name() + " was crafted. It is now available in your inventory\n");
 						c.getString("\n\t~ " + aa.name() + " was crafted. It is now available in your inventory\n");
 					}
+
+
 				} else {
 					//System.out.println("Nothing");
 				}

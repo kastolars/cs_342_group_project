@@ -1,21 +1,14 @@
-import java.awt.Dimension;
-import java.awt.Event;
-import java.awt.FlowLayout;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.BorderLayout;
-import java.awt.Component;
+/* Name: Ayush Patel
+ * Group: 34
+ * Homework 5: Group Project -- GUI
+ * Description: GUI to display outputs and perform moves using Buttons
+ * 
+ */
 
-import javax.swing.AbstractAction;
-import javax.swing.BorderFactory;
-import javax.swing.BoxLayout;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import javax.swing.border.Border;
 
 public class MovePane_2 extends JPanel implements ActionListener {
@@ -47,11 +40,9 @@ public class MovePane_2 extends JPanel implements ActionListener {
 
         Dimension dim = getPreferredSize();
         isReady = false;
-        //dim.width = 300;
-        //dim.height = 250;
-        //setPreferredSize(dim);
 
         textField = new JTextField(10);
+        textField.setSize(10, 5);
         ok = new JButton("OK");
 
         Border innerBorder = (BorderFactory.createTitledBorder(name));
@@ -59,6 +50,34 @@ public class MovePane_2 extends JPanel implements ActionListener {
         setBorder(BorderFactory.createCompoundBorder(outterBorder, innerBorder));
 
     }
+
+    /*
+    public void moveButton () {
+
+        go = new JButton("Go");             go.addActionListener(this);
+        get = new JButton("Get");           get.addActionListener(this);
+        drop = new JButton("Drop");         drop.addActionListener(this);
+        craft = new JButton("Craft");       craft.addActionListener(this);
+        inve = new JButton("Inventory");    inve.addActionListener(this);
+        use = new JButton("Use");           use.addActionListener(this);
+        look = new JButton("Look");         look.addActionListener(this);
+        exit = new JButton("Exit");         exit.addActionListener(this);
+
+
+        setLayout(new FlowLayout(FlowLayout.NONE.NONE));
+
+        add(go);
+        add(get);
+        add(drop);
+        add(craft);
+        add(use);
+
+        add(look);
+        add(inve);
+        add(exit);
+
+    } 
+    */
 
     public void moveButton () {
 
@@ -75,23 +94,16 @@ public class MovePane_2 extends JPanel implements ActionListener {
 
         GridBagConstraints gc = new GridBagConstraints();
 
+        //gc.insets = new Insets(10, 50, 20, 0);
+
         //GO BUTTON
         gc.weightx = 1;
         gc.weighty = 0.1;
         gc.gridx = 0;
         gc.gridy = 0;
         gc.fill = GridBagConstraints.NONE;
-        gc.anchor = GridBagConstraints.LINE_START;
+        //gc.anchor = GridBagConstraints.LINE_START;
         add(go, gc);
-
-        //LOOK BUTTON
-        gc.weightx = 1;
-        gc.weighty = 0.1;
-        gc.gridx = 0;
-        gc.gridy = 1;
-        gc.fill = GridBagConstraints.NONE;
-        gc.anchor = GridBagConstraints.LINE_START;
-        add(look, gc);
 
         //GET BUTTON
         gc.weightx = 1;
@@ -99,7 +111,7 @@ public class MovePane_2 extends JPanel implements ActionListener {
         gc.gridx = 0;
         gc.gridy = 2;
         gc.fill = GridBagConstraints.NONE;
-        gc.anchor = GridBagConstraints.LINE_START;
+        //gc.anchor = GridBagConstraints.LINE_START;
         add(get, gc);
 
         //DROP BUTTON
@@ -108,7 +120,7 @@ public class MovePane_2 extends JPanel implements ActionListener {
         gc.gridx = 0;
         gc.gridy = 3;
         gc.fill = GridBagConstraints.NONE;
-        gc.anchor = GridBagConstraints.LINE_START;
+        //gc.anchor = GridBagConstraints.LINE_START;
         add(drop, gc);
 
         //CRAFT BUTTON
@@ -117,7 +129,7 @@ public class MovePane_2 extends JPanel implements ActionListener {
         gc.gridx = 0;
         gc.gridy = 4;
         gc.fill = GridBagConstraints.NONE;
-        gc.anchor = GridBagConstraints.LINE_START;
+        //gc.anchor = GridBagConstraints.LINE_START;
         add(craft, gc);
 
         //USE BUTTON
@@ -126,8 +138,17 @@ public class MovePane_2 extends JPanel implements ActionListener {
         gc.gridx = 0;
         gc.gridy = 5;
         gc.fill = GridBagConstraints.NONE;
-        gc.anchor = GridBagConstraints.LINE_START;
+        //gc.anchor = GridBagConstraints.LINE_START;
         add(use, gc);
+
+        //LOOK BUTTON
+        gc.weightx = 1;
+        gc.weighty = 0.1;
+        gc.gridx = 0;
+        gc.gridy = 1;
+        gc.fill = GridBagConstraints.NONE;
+        //gc.anchor = GridBagConstraints.LINE_START;
+        add(look, gc);
 
         //INVE BUTTON
         gc.weightx = 1;
@@ -135,7 +156,7 @@ public class MovePane_2 extends JPanel implements ActionListener {
         gc.gridx = 0;
         gc.gridy = 6;
         gc.fill = GridBagConstraints.NONE;
-        gc.anchor = GridBagConstraints.LINE_START;
+        //gc.anchor = GridBagConstraints.LINE_START;
         add(inve, gc);
 
         //GO BUTTON
@@ -144,20 +165,24 @@ public class MovePane_2 extends JPanel implements ActionListener {
         gc.gridx = 0;
         gc.gridy = 7;
         gc.fill = GridBagConstraints.NONE;
-        gc.anchor = GridBagConstraints.LINE_START;
+        //gc.anchor = GridBagConstraints.LINE_START;
         add(exit, gc);
 
 
         //gc.weightx = 1;
         //gc.weighty = 0.1;
+
+        gc.insets = new Insets(0, 50, 0, 0);
         
         gc.gridx = 250;
-        gc.gridy = 75;
+        gc.gridy = 3;
         add(textField, gc);
+
+        //textField.setBorder
 
 
         gc.gridx = 250;
-        gc.gridy = 100;
+        gc.gridy = 4;
         add(ok, gc);
 
 
@@ -166,36 +191,24 @@ public class MovePane_2 extends JPanel implements ActionListener {
 
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 //buffer += ((JButton)e.getSource()).getName();
                 buffer += " " + textField.getText();
                 textField.setText("");
                 textField.setEditable(false);
 
-                //buffer += "\n";
-                panel.appendText(buffer);
-                //System.out.println("R: " + buffer + " " + isReady );
-                //notify();
+                panel.appendText(buffer + "\n");
 
                 isReady = true;
 
             }
         }) ;
         
-
-        //ok.addActionListener(this);
-        //setLayout(new BorderLayout());
-        //textField.setText("HERE");
-        //add(textField, BorderLayout.CENTER);
-        //add(ok, BorderLayout.SOUTH);
-
         textField.setEditable(false);
 
     }
 
     public Boolean pieceOfShit() {
-        //System.out.println("called..");
-        //int i = 1;
-        //i++;
         return isReady;
     }
 
@@ -240,16 +253,11 @@ public class MovePane_2 extends JPanel implements ActionListener {
         } else if (clicked == craft) {
             buffer = "Craft";
             textField.setEditable(true);
-        /*} else if(clicked == ok && buffer.length() > 0) {
-            buffer += " " + textField.getText();*/
         } else if (clicked == exit) {
             buffer = "Exit";
             textField.setEditable(true);
         }
 
-        //buffer += "\n";
-        //System.out.println("L: " + buffer);
-        //panel.appendText(buffer);
     }
 
 

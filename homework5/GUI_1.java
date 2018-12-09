@@ -15,7 +15,7 @@ public class GUI_1 extends JFrame implements UserInterface{
 
     public GUI_1(IO intF) throws HeadlessException {
 
-        super("GUI 1");
+        super("GUI 1 -- Karol Stolarski");
 
         user = intF;
         setLayout(new BorderLayout());
@@ -31,7 +31,7 @@ public class GUI_1 extends JFrame implements UserInterface{
         add(bottomToolbar, BorderLayout.SOUTH);
         add(textPanel, BorderLayout.CENTER);
 
-        printOnGUI();
+        //printOnGUI();
 
         setSize(500, 400);
         setDefaultCloseOperation(3);
@@ -39,27 +39,45 @@ public class GUI_1 extends JFrame implements UserInterface{
     }
     
 
-    public void printOnGUI() {
-        textPanel.appendText(outBuffer);
+    public void printOnGUI(String s) {
+        textPanel.appendText(s);
     }
     
     @Override
     public void display(String p) {
 
-        if(outBuffer == null) {
-            outBuffer = p;
-        } else {
-            outBuffer += p;
-        }
-
-        //printOnGUI();
-        //textPanel.appendText(outBuffer);
+        System.out.println(p);
+        printOnGUI(p);
 
     }
 
     @Override
     public String getLine() {
-        return KeyboardScanner.getKeyboardScanner().nextLine();
+
+        toolbar.setReady();
+        bottomToolbar.setReady();
+
+        while( !toolbar.getReady() && !bottomToolbar.getReady() ) {
+            
+            try {
+                Thread.sleep(500);
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        };
+
+        //System.out.println("END LOOP");
+        if(toolbar.getReady()) {
+            return toolbar.getLine();
+        } else if(bottomToolbar.getReady()) {
+            System.out.println(bottomToolbar.getLine());
+            return bottomToolbar.getLine();
+        } else {
+            return "Stay";
+        }
+        
     }
 
     @Override
@@ -68,6 +86,6 @@ public class GUI_1 extends JFrame implements UserInterface{
         setVisible(b);
         
         textPanel.flush();
-        outBuffer = "";
+        //outBuffer = "";
     }
 }

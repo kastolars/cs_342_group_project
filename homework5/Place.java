@@ -108,9 +108,7 @@ public class Place {
         // System.out.println(name);
         // System.out.println(description);
         // System.out.println("You see:");
-
-
-        //CHECK SCANNER IN GETLINE
+        
         String s = "\n" + name + "\n\n" + description + "\n" + "You See:\n";
         //c.getString(name + "\n");
         //c.getString(description);

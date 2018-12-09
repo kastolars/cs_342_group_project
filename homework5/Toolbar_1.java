@@ -12,14 +12,20 @@ public class Toolbar_1 extends JPanel implements ActionListener {
     private JButton craftButton;
     private JTextField textField;
 
+    private Boolean isReady;
+
     private String s; // buffer
 
     private Boolean choosen = false;
     
     private TextPanel textPanel;
 
+    private String commandBuffer;
+
     public Toolbar_1() {
 
+        isReady = false;
+        commandBuffer = "";
 
         goButton = new JButton("Go");
         getButton = new JButton("Get");
@@ -67,13 +73,28 @@ public class Toolbar_1 extends JPanel implements ActionListener {
         }
     }
 
+    public Boolean getReady() {
+
+        return isReady;
+    }
+
+    public void setReady() {
+        isReady = false;
+    }
+
+    public String getLine() {
+        return commandBuffer;
+    }
+
     private void setBuffer(String command){
         String field = textField.getText();
         if (field.isEmpty()) {
             textPanel.appendText("I don't have enough information.\n");
         } else {
             s = command + " " + field;
+            commandBuffer = s;
             textPanel.appendText(s + "\n");
+            isReady = true;
             textField.setText("");
         }
     }

@@ -1,9 +1,12 @@
-import java.awt.BorderLayout;
-import java.awt.Dimension;
+/* Name: Ayush Patel
+ * Group: 34
+ * Homework 5: Group Project -- GUI
+ * Description: GUI to display outputs and perform moves using Buttons
+ * 
+ */
 
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
-import javax.swing.JScrollPane;
+import java.awt.*;
+import javax.swing.*;
 
 public class TextPane_2 extends JPanel {
 
@@ -15,7 +18,7 @@ public class TextPane_2 extends JPanel {
         setLayout(new BorderLayout());
 
         Dimension dim = getPreferredSize();
-        dim.height = 400;
+        dim.height = 500;
         setPreferredSize(dim);
 
         add(new JScrollPane(textArea), BorderLayout.CENTER);

@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 /* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
  * Group: 34
- * Homework 4: Group Project
+ * Homework 5: Group Project
  * 
  * DESCRIPTION:
  *  This class outlines the behavior of the Players
@@ -26,7 +26,7 @@ public class Player extends Character implements DecisionMaker{
     public Player(Scanner s){
         super(s);
 
-        user = new IO(this);
+        user = new IO();
     }
 
     public Player(int i, String s, String d){
@@ -35,7 +35,7 @@ public class Player extends Character implements DecisionMaker{
         mana = 100;
         lives = 3;
 
-        user = new IO(this);
+        user = new IO();
     }
 
     public void getString(String s) {
@@ -48,7 +48,6 @@ public class Player extends Character implements DecisionMaker{
         getCurrentPlace().display(this);
         //System.out.print("\n" + name() + " -> ");
         getString("\n" + name() + " -> ");
-        //return new Move( KeyboardScanner.getKeyboardScanner().nextLine() );
         
         String s = user.getline();
         //System.out.println ("Player: " + s);
@@ -66,7 +65,12 @@ public class Player extends Character implements DecisionMaker{
         //System.out.print(CColor.RESET);
         this.getString(CColor.RESET);
 
-        //System.out.println(Place.getPlaceById(placeID).name());
+        try {
+            Thread.sleep(1500);
+        } catch (Exception e) {
+            //TODO: handle exception
+            e.printStackTrace();
+        }
 
         toggleGUI(false);
     }

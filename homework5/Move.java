@@ -123,7 +123,7 @@ public class Move {
 
 				} else {
 					charLoc = tempCurr;
-					c.getString("\nYou are now in " + charLoc.name() + "\n");
+					//c.getString("\nYou are now in " + charLoc.name() + "\n");
 				}
 
 				charLoc.addCharacter(c);

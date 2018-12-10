@@ -13,9 +13,9 @@
 
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Collections;
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 
 import static java.lang.Math.abs;
 
@@ -26,7 +26,7 @@ public class Place {
     protected static Place start;
     protected static HashMap<Integer, Place> places = new HashMap<Integer, Place>();
     protected ArrayList<Direction> directions = new ArrayList<Direction>();
-    protected ArrayList<Character> characters = new ArrayList<>();
+    protected HashSet<Character> characters = new HashSet<>();
     protected ArrayList<Artifact> artifacts = new ArrayList<>();
 
     public Place(int id, String name, String description) {
@@ -57,11 +57,18 @@ public class Place {
 
     //Follow the direction passed in if the direction exist set to new place
     //if not return current place
-    public Place followDirection(String s){
+    public Place followDirection(String s, Character c){
+        
+        //System.out.println("Place -> Direction: " + s + "\n");"
+        //System.out.println("Place: " + c.name());
+        
         for (Direction d : directions){
+            //System.out.println("Checking Direction - " + d.type());
+            //System.out.println("Place: " + d.match(s));
             if (d.match(s)){
+                System.out.println("Place: Direction Found");
                 try {
-                    return d.follow(s);
+                    return d.follow(c, s);
                 } catch (Direction.LockedDirectionException e){
                     return this;
                 }
@@ -97,16 +104,49 @@ public class Place {
         return id == 1;
     }
 
-    public void display(){
-        System.out.println(name);
-        System.out.println(description);
-        System.out.println("You see:");
+    public void display(Character c){
+       
+        // System.out.println(name);
+        // System.out.println(description);
+        // System.out.println("You see:");
+        
+        String s = "\n" + name + "\n\n" + description + "\n" + "You See:\n";
+        //c.getString(name + "\n");
+        //c.getString(description);
+        c.getString(s);
+        
         for (Artifact a : artifacts){
-            a.print();
+            //a.print();
+            a.print(c);
         }
+
+        c.getString("\nCharacters:\n");
+
+        String names = "";
+
+        for(Character d : characters){
+            names += d.name() + "{" + d.health + "}, ";
+        }
+
+        names += "\n";
+        c.getString(names);
+
+        c.getString("\nDirections:\n");
+
+        String cards = "";
+
+        for(Direction d : directions){
+            cards += d.printCardinals();
+        }
+
+        cards += "\n";
+
+        c.getString(cards);
+
     }
 
-    public ArrayList<Character> getCharacters(){
+
+    public HashSet<Character> getCharacters(){
         return characters;
     }
 

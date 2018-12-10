@@ -50,12 +50,14 @@ public class Weapons extends Artifact {
 
         } else {
 
-            System.out.println("\nUsing Weapon...\n");
+            //System.out.println("\nUsing Weapon...\n");
+            c.getString("\nUsing Weapon...\n");
             
             Character opponent = c.getCurrentPlace().getRandomCharacter(c);
 
             if(opponent == null) {
-                System.out.println("You can't attack anyone in this room...\n");
+                //System.out.println("You can't attack anyone in this room...\n");
+                c.getString("You can't attack anyone in this room...\n");
             } else {
                 opponent.takeDamage(metaData);
             }

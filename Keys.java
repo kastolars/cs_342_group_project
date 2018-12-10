@@ -35,7 +35,7 @@ public class Keys extends Artifact {
 			curr.useKey(this, c);
 
 		} else if (c instanceof Player) {
-			System.out.println("\nThe artifact you are trying to use is not a Key\n");
+			//System.out.println("\nThe artifact you are trying to use is not a Key\n");
 		}
 
     }

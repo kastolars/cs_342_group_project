@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 /* Name: Ayush Patel, Luke Paltzer, Karol Stolarski
  * Group: 34
- * Homework 4: Group Project
+ * Homework 5: Group Project
  * 
  * DESCRIPTION:
  *  This class outlines the behavior of the Players
@@ -20,8 +20,16 @@ import java.util.Scanner;
  */
 
 public class Player extends Character implements DecisionMaker{
+
+    private IO user;
+
     public Player(Scanner s){
         super(s);
+        health = 100;
+        mana = 100;
+        lives = 3;
+
+        user = new IO();
     }
 
     public Player(int i, String s, String d){
@@ -29,21 +37,47 @@ public class Player extends Character implements DecisionMaker{
         health = 100;
         mana = 100;
         lives = 3;
+
+        //System.out.printf(" # %d, %d, %d # ", health, mana, lives);
+
+        user = new IO();
     }
 
-    public Move getMove(){
-        getCurrentPlace().display();
-        System.out.print("\n" + name() + " -> ");
-        return new Move( KeyboardScanner.getKeyboardScanner().nextLine() );
+    public void getString(String s) {
+        //System.out.println(s);
+        user.display(s);
+    }
+
+    public Move getMove() {
+
+        getCurrentPlace().display(this);
+        //System.out.print("\n" + name() + " -> ");
+        getString("\n" + name() + " -> ");
+        
+        String s = user.getline();
+        //System.out.println ("Player: " + s);
+        
+        return new Move(s);
     }
 
     public void makeMove(){
-        System.out.print(color);
+        //System.out.print(color);
+        this.getString(color);
 
+        toggleGUI(true);
         getMove()
             .execute( this, Place.getPlaceById(placeID) );
+        //System.out.print(CColor.RESET);
+        this.getString(CColor.RESET);
 
-        System.out.print(CColor.RESET);
+        try {
+            Thread.sleep(1500);
+        } catch (Exception e) {
+            //TODO: handle exception
+            e.printStackTrace();
+        }
+
+        toggleGUI(false);
     }
 
     protected void lifeCheck(){
@@ -53,7 +87,15 @@ public class Player extends Character implements DecisionMaker{
     }
 
     public void cast(String spell, Place p){
-        System.out.println("  ... nothing happened ... ");
+        //System.out.println("  ... nothing happened ... ");
+        this.getString(" ... nothing happened ... ");
+    }
+
+    @Override
+    public void toggleGUI(Boolean tog){
+
+        //System.out.println("Attempting Toggle..." + tog);
+        user.setVisibility(tog);
     }
 
 }

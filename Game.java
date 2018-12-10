@@ -32,7 +32,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Game {
-    // private ArrayList< Artifact > items;
+    private static ArrayList< Character > dead = new ArrayList< Character >();
     
     private final String name;
 
@@ -275,12 +275,19 @@ public class Game {
 
         System.out.println("  WELCOME TO " + name + "\n");
 
+
         try{
             while( true ){
+                reap();
                 Character.knownCharacters().forEach(
                     x -> {
-                        if( !x.equals(0) )
+                        if( !x.equals(0) ) {
+                            //x.toggleGUI(true);
                             x.makeMove();
+                            //System.out.println("Moved");
+                            //x.toggleGUI(false);
+                        }
+
                     }
                 );
             }
@@ -291,6 +298,14 @@ public class Game {
         finally{
             GameTester.quit();
         }
+    }
+
+    private void reap(){
+        dead.forEach( x -> Character.knownCharacters().remove(x)) ;
+    }
+
+    public static void reaper(Character c){
+        dead.add(c);
     }
 
     public void print(){

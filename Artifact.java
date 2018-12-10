@@ -117,13 +117,17 @@ public class Artifact {
 	public void use(Character c) {
 
 		if(this.name().contains("key")) {
-			System.out.println("\nWrong Use Method\n");
+			//System.out.println("\nWrong Use Method\n");
+			c.getCurrentPlace().useKey(this, c);
 		}
 
 		if(this.name().contains("Torch")) { 
 			c.getCurrentPlace().illuminate();
 		}
-		
+
+		if(this.name().contains("Scroll")) { 
+			c.cast( this.name(), c.getCurrentPlace() );
+		}
 		
 		/*if(this.name().contains("key")){
 			Place curr = Character.getCurrentPlace(c);
@@ -146,16 +150,20 @@ public class Artifact {
 		return null;
 	}
 
-	public static void display() {
+	public static void display(Character c) {
 		for(int i = 0; i < artf.size(); i++){
-			artf.get(i).print();
+			artf.get(i).print(c);
 		}
 	}
 	
 	
 	//prints the information for debugging
-	public void print() {
-		System.out.println("\nName: " + name + "\nDescription: " + description);
+	public void print( Character c) {
+		//System.out.println("\nName: " + name + "\nDescription: " + description);
+
+		String s = "\nName: " + name + "\nDescription: " + description;
+
+		c.getString(s);
 	}
 
     // return a random valid item

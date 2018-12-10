@@ -20,11 +20,15 @@ public class BoobyTrappedDirection extends Direction {
     //overrides the current follow function to do damage on all the characters 
     //in that room and then follows in that direction
     @Override
-    public Place follow(String s) throws LockedDirectionException {
+    public Place follow(Character c, String s) throws LockedDirectionException {
         
         source.getCharacters().forEach(x -> x.takeDamage(20));
-        System.out.println("Oh no! A boom went off\n");
-        return super.follow(s);
+//        System.out.println("Oh no! A boom went off\n");
+        for (Character x: this.source.characters
+             ) {
+            x.getString("Oh no! A boom went off\n");
+        }
+        return super.follow(c, s);
     }
 
 }

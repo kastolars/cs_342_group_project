@@ -27,7 +27,7 @@ public class Recipe {
         String next = CleanLineScanner.getLine(recp_scn);
         //String next = recp_scn.nextLine();
         //next = next.trim();
-        System.out.println(next);
+        //System.out.println(next);
 
         if(next.equals("\0") || next.equals(null)) {
 
@@ -125,7 +125,8 @@ public class Recipe {
                     return this.Craft(c);
 
                 } else {
-                    System.out.println("\nYou have insufficient Resources to craft " + this.name);
+                    //System.out.println("\nYou have insufficient Resources to craft " + this.name);
+                    c.getString("\nYou have insufficient Resources to craft " + this.name);
                     return null;
                 }
             }
@@ -142,13 +143,15 @@ public class Recipe {
                     return this.Craft(c);
                 
                 } else {
-                    System.out.println("\nYou have insufficient Resources to craft " + this.name);
+                    //System.out.println("\nYou have insufficient Resources to craft " + this.name);
+                    c.getString("\nYou have insufficient Resources to craft " + this.name);
                     return null;
                 }
             }
         }
 
-        System.out.println("\nYou don't the required resources to craft this item. Try again");
+        //System.out.println("\nYou don't the required resources to craft this item. Try again");
+        c.getString("\nYou don't the required resources to craft this item. Try again");
         return null;
     }
 

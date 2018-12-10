@@ -30,12 +30,14 @@ public class DarkPlace extends Place{
 
     //changes the description of the room to indicate end of darkness
     @Override
-    public void display() {
+    public void display(Character c) {
         if (!dark){
-            super.display();
+            super.display(c);
         } else {
-            System.out.println(darkName);
-            System.out.println(darkDescription);
+            //System.out.println(darkName);
+            c.getString(darkName);
+            //System.out.println(darkDescription);
+            c.getString(darkDescription);
         }
     }
 }

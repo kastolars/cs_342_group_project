@@ -159,7 +159,7 @@ NPC		0		//  Where oh where can the Leprechaun be ?
 1
 The Cheerful Leprechaun sings and dances about his pot o' gold !
 
-PLAYER		0		// A player in a random spot?  Interesting!
+PLAYER		12		// A player in a random spot?  Interesting!
 10		Lost Wanderer   
 3
 This lost wanderer needs help.

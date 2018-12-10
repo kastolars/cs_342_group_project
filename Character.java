@@ -53,6 +53,10 @@ public abstract class Character {
     private String name;
     private String description;
 
+    public IO interfaceType;
+
+    private String outputBuffer;
+
     private ArrayList< Artifact > items;
     private final static ArrayList<Character> 
                         players = new ArrayList<Character>();
@@ -61,6 +65,8 @@ public abstract class Character {
 
     public Character( Scanner parser ){
         getColor();
+
+        //interfaceType = new IO();
 
         items = new ArrayList< Artifact >();
 
@@ -104,6 +110,8 @@ public abstract class Character {
     public Character( int ID, String name, String desc ){
         getColor();
 
+        //interfaceType = new IO();
+
         this.ID = ID;
         this.name = name;
         this.description = desc;
@@ -112,6 +120,36 @@ public abstract class Character {
 
         addCharacter(this);
     }
+
+    //toggles the GUI
+    public void toggleGUI(Boolean tog){
+        //user.setVisibility(tog);
+    }
+
+    public void setOutputBuffer(String s) {
+        
+        if(outputBuffer == null) {
+            outputBuffer = s;
+        } else {
+            outputBuffer += s;
+        }
+    }
+
+    //sets visibility of the output for a character
+    public void setVisibility (Boolean turn) {
+        interfaceType.setVisibility(turn);
+    }
+
+
+    //Takes in a String to be printed for this Character
+    public void getString(String s) {
+
+        //System.out.println(s);
+        interfaceType.display(s);
+        //calls IO.display(s) to print using current IO
+        
+    }
+    
 
     //characters to the static collection of all characters 
     private void addCharacter(Character character){
@@ -147,6 +185,7 @@ public abstract class Character {
         return this.ID == id;
     }
 
+
     // group members for printing
     public String toString(){
         return "Character:\n" + 
@@ -157,6 +196,8 @@ public abstract class Character {
 
     //adds artifacts to the collection of artifacts with the character
     public void addArtifact( Artifact item ){
+
+        System.out.println("Character - " + item.name() );
         if( item == null ) return;
         System.out.printf("-+ Item [%s] Aquired +-\n", item.name() );
         items.add( item );
@@ -209,10 +250,10 @@ public abstract class Character {
         return null;
     }
 
-    public void print(){ System.out.println( this ); }
+    public void print(Character c){ System.out.println( this ); }
 
-    public void printItems(){ items.forEach( x -> x.print() ); }
-    public void display(){ print(); }
+    public void printItems(){ items.forEach( x -> x.print(this) ); }
+    public void display(){ print(this); }
     public void makeMove(){}
 
     //changes color based on each character. Each one has different color
@@ -282,6 +323,8 @@ public abstract class Character {
 
         else if( name.toLowerCase().contains("leprechaun") ){
             new Leprechaun(placeID, name, description);
+        } else {
+            new NPC(parser);
         }
 
         // placeID, name, description
